@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5617dba877a8be8b0b42e8931d3232b3",
+    "revision": "397488baa6aab90c99688307bb6aaba6",
     "url": "/index.html"
   },
   {
-    "revision": "ab5c61bbdfdc805fd5b9",
+    "revision": "327e8f551ce2318a943a",
     "url": "/static/css/2.47271137.chunk.css"
   },
   {
-    "revision": "246513ce131951516fbe",
-    "url": "/static/css/main.af9acce8.chunk.css"
+    "revision": "656a50a04d16beac3ceb",
+    "url": "/static/css/main.c7337be9.chunk.css"
   },
   {
-    "revision": "ab5c61bbdfdc805fd5b9",
-    "url": "/static/js/2.24859449.chunk.js"
+    "revision": "327e8f551ce2318a943a",
+    "url": "/static/js/2.0ed35e26.chunk.js"
   },
   {
     "revision": "38c8b4759ed1997e507345e5da03a3d4",
-    "url": "/static/js/2.24859449.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.0ed35e26.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "246513ce131951516fbe",
-    "url": "/static/js/main.8b301d35.chunk.js"
+    "revision": "656a50a04d16beac3ceb",
+    "url": "/static/js/main.df375b8a.chunk.js"
   },
   {
     "revision": "b925b43b2a2b991d28f9",
@@ -61,7 +61,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "48ca4e07fe2041e16bc51b55b9c6a66f",
-    "url": "/static/media/afx-2020-large.06b80453.png"
+    "url": "/static/media/afx-cover.06b80453.png"
   },
   {
     "revision": "94da40f73c0124267827e6f73d8d9153",
@@ -69,11 +69,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "9ec5f1f150bd19c3fdb12cf736398fe6",
-    "url": "/static/media/design-style-afx.9e0b4337.png"
+    "url": "/static/media/design-guide-afx.9e0b4337.png"
+  },
+  {
+    "revision": "2da342bd157163a879ea0c108e2d3f25",
+    "url": "/static/media/design-guide-sigmas.5918e29d.png"
+  },
+  {
+    "revision": "3f849e6c138d9886e08498138ccae201",
+    "url": "/static/media/donation1.bd351d15.png"
+  },
+  {
+    "revision": "89158cea46d3d3c93e962a8dfbea28cf",
+    "url": "/static/media/donation2.70520811.png"
   },
   {
     "revision": "83ad7392001b7ae899dd4d47d71b1bcf",
     "url": "/static/media/download.cdbdd47b.png"
+  },
+  {
+    "revision": "d69c69c45364f83cbcdc2c2612088bf3",
+    "url": "/static/media/dvam.29aeeb62.png"
+  },
+  {
+    "revision": "29979e5bdbd3335872835679e856bd34",
+    "url": "/static/media/election.b10e1146.png"
   },
   {
     "revision": "5f58b9ce448a37478888efc4eb8c31a4",
@@ -86,6 +106,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "66b281a859289b989e10f03fda01a90c",
     "url": "/static/media/linkedin.06c45d2c.png"
+  },
+  {
+    "revision": "5d85e6e1272961e356821bd803d9727b",
+    "url": "/static/media/minorboard.140c8c3e.png"
   },
   {
     "revision": "dcd03a294612c9e4092997b1d5d5811b",
@@ -194,6 +218,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fcd2057683177b9963cc885671877081",
     "url": "/static/media/sigmas-cover.0b735209.png"
+  },
+  {
+    "revision": "c74e9a25ebb6cbdb6aa8176abed905f6",
+    "url": "/static/media/tigertalk-cover.efd89602.png"
   },
   {
     "revision": "76c5f23ff6547c1c085c3ce21926f09d",
