@@ -1,3 +1,0 @@
-# izzielau
-
-My personal website! 
