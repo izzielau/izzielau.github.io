@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2a381faf06852e65cd68db4998adfeeb",
+    "revision": "aa55956f455fd45026251a5446a6c418",
     "url": "/index.html"
   },
   {
-    "revision": "6ac7576eacf9151d5499",
+    "revision": "06e99c020ac0a2f0f5d6",
     "url": "/static/css/2.098b75c7.chunk.css"
   },
   {
-    "revision": "10252ea43c1b291dcd53",
-    "url": "/static/css/main.e4fe1ded.chunk.css"
+    "revision": "00f012c65364264d6406",
+    "url": "/static/css/main.946949ce.chunk.css"
   },
   {
-    "revision": "6ac7576eacf9151d5499",
-    "url": "/static/js/2.9ad37b51.chunk.js"
+    "revision": "06e99c020ac0a2f0f5d6",
+    "url": "/static/js/2.891d4803.chunk.js"
   },
   {
     "revision": "39982ebcc4ffcf2272511f1dcd09da2c",
-    "url": "/static/js/2.9ad37b51.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.891d4803.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "10252ea43c1b291dcd53",
-    "url": "/static/js/main.4ed058fc.chunk.js"
+    "revision": "00f012c65364264d6406",
+    "url": "/static/js/main.43e629fb.chunk.js"
   },
   {
     "revision": "b925b43b2a2b991d28f9",
@@ -106,6 +106,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "29979e5bdbd3335872835679e856bd34",
     "url": "/static/media/election.b10e1146.png"
+  },
+  {
+    "revision": "199868bdbae043feea6443502c3be462",
+    "url": "/static/media/genres.4a409caa.png"
   },
   {
     "revision": "7f23b4c793d9bb168fe3d86ff859960d",
@@ -208,12 +212,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/onlo@2x.2cc7f8cb.png"
   },
   {
+    "revision": "766e68f0744a00f048f1954cb99d7610",
+    "url": "/static/media/popularity.e3a6074c.png"
+  },
+  {
     "revision": "dcd03a294612c9e4092997b1d5d5811b",
     "url": "/static/media/profile.914245b8.jpg"
   },
   {
     "revision": "b805eeafa6f1296c81e3b44005e590a9",
     "url": "/static/media/resume-preview.18fffed6.png"
+  },
+  {
+    "revision": "1e4ac305d5d4b37c2f4a28efac6b3f36",
+    "url": "/static/media/rhizome_roc.c2e33a7c.png"
   },
   {
     "revision": "5cb7edfceb233100075dc9a1e12e8da3",

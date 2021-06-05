@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.e4fe1ded.chunk.css",
-    "main.js": "/static/js/main.4ed058fc.chunk.js",
-    "main.js.map": "/static/js/main.4ed058fc.chunk.js.map",
+    "main.css": "/static/css/main.946949ce.chunk.css",
+    "main.js": "/static/js/main.43e629fb.chunk.js",
+    "main.js.map": "/static/js/main.43e629fb.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.58a66dfa.js",
     "runtime-main.js.map": "/static/js/runtime-main.58a66dfa.js.map",
     "static/css/2.098b75c7.chunk.css": "/static/css/2.098b75c7.chunk.css",
-    "static/js/2.9ad37b51.chunk.js": "/static/js/2.9ad37b51.chunk.js",
-    "static/js/2.9ad37b51.chunk.js.map": "/static/js/2.9ad37b51.chunk.js.map",
+    "static/js/2.891d4803.chunk.js": "/static/js/2.891d4803.chunk.js",
+    "static/js/2.891d4803.chunk.js.map": "/static/js/2.891d4803.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1cefc0cb17d6d712ea6eb17862bb6f18.js": "/precache-manifest.1cefc0cb17d6d712ea6eb17862bb6f18.js",
+    "precache-manifest.d7192f0837ab12af55e3f9282fa52cc5.js": "/precache-manifest.d7192f0837ab12af55e3f9282fa52cc5.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.098b75c7.chunk.css.map": "/static/css/2.098b75c7.chunk.css.map",
-    "static/css/main.e4fe1ded.chunk.css.map": "/static/css/main.e4fe1ded.chunk.css.map",
-    "static/js/2.9ad37b51.chunk.js.LICENSE.txt": "/static/js/2.9ad37b51.chunk.js.LICENSE.txt",
+    "static/css/main.946949ce.chunk.css.map": "/static/css/main.946949ce.chunk.css.map",
+    "static/js/2.891d4803.chunk.js.LICENSE.txt": "/static/js/2.891d4803.chunk.js.LICENSE.txt",
     "static/media/1.ae3ceb8c.jpg": "/static/media/1.ae3ceb8c.jpg",
     "static/media/2.8628c111.png": "/static/media/2.8628c111.png",
     "static/media/3.c1e7204d.png": "/static/media/3.c1e7204d.png",
@@ -34,14 +34,17 @@
     "static/media/donation2.70520811.png": "/static/media/donation2.70520811.png",
     "static/media/dvam.29aeeb62.png": "/static/media/dvam.29aeeb62.png",
     "static/media/election.b10e1146.png": "/static/media/election.b10e1146.png",
+    "static/media/genres.4a409caa.png": "/static/media/genres.4a409caa.png",
     "static/media/github.1b600795.png": "/static/media/github.1b600795.png",
     "static/media/gmail.5adebe81.png": "/static/media/gmail.5adebe81.png",
     "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2",
     "static/media/linkedin.17c6cf04.png": "/static/media/linkedin.17c6cf04.png",
     "static/media/minorboard.140c8c3e.png": "/static/media/minorboard.140c8c3e.png",
     "static/media/onlo@2x.2cc7f8cb.png": "/static/media/onlo@2x.2cc7f8cb.png",
+    "static/media/popularity.e3a6074c.png": "/static/media/popularity.e3a6074c.png",
     "static/media/profile.914245b8.jpg": "/static/media/profile.914245b8.jpg",
     "static/media/resume-preview.18fffed6.png": "/static/media/resume-preview.18fffed6.png",
+    "static/media/rhizome_roc.c2e33a7c.png": "/static/media/rhizome_roc.c2e33a7c.png",
     "static/media/spotify@2x.e1774b1d.png": "/static/media/spotify@2x.e1774b1d.png",
     "static/media/sproul@2x.5551f131.png": "/static/media/sproul@2x.5551f131.png",
     "static/media/tigertalk@2x.711c3c73.png": "/static/media/tigertalk@2x.711c3c73.png"
@@ -49,8 +52,8 @@
   "entrypoints": [
     "static/js/runtime-main.58a66dfa.js",
     "static/css/2.098b75c7.chunk.css",
-    "static/js/2.9ad37b51.chunk.js",
-    "static/css/main.e4fe1ded.chunk.css",
-    "static/js/main.4ed058fc.chunk.js"
+    "static/js/2.891d4803.chunk.js",
+    "static/css/main.946949ce.chunk.css",
+    "static/js/main.43e629fb.chunk.js"
   ]
 }
