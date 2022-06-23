@@ -1,31 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "962a93f25cae945723c82d778a9d4529",
+    "revision": "3e961abc7454b5e935b625e2980f6a82",
     "url": "/index.html"
   },
   {
-    "revision": "fb60a6db2c555080b0c9",
+    "revision": "78471c67143ede85d6ab",
     "url": "/static/css/2.098b75c7.chunk.css"
   },
   {
-    "revision": "cd6557e069d1b14d8c5b",
-    "url": "/static/css/main.f67f2726.chunk.css"
+    "revision": "ce942c5e0ed90d9fab52",
+    "url": "/static/css/main.2e82eacd.chunk.css"
   },
   {
-    "revision": "fb60a6db2c555080b0c9",
-    "url": "/static/js/2.1ba6b6bb.chunk.js"
+    "revision": "78471c67143ede85d6ab",
+    "url": "/static/js/2.9ea31381.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/static/js/2.1ba6b6bb.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.9ea31381.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cd6557e069d1b14d8c5b",
-    "url": "/static/js/main.f8da0c67.chunk.js"
+    "revision": "ce942c5e0ed90d9fab52",
+    "url": "/static/js/main.0808d23b.chunk.js"
   },
   {
     "revision": "b925b43b2a2b991d28f9",
     "url": "/static/js/runtime-main.58a66dfa.js"
+  },
+  {
+    "revision": "af29a4d916c955ea4181719eac26f26f",
+    "url": "/static/media/akron@2x.c17bc1c9.png"
   },
   {
     "revision": "99bff0163c2bd5b351c71a45e28d0efd",
@@ -34,6 +38,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "77e642c5a6ceb7e14fb9ab1098496f25",
     "url": "/static/media/bdab-cover.56cf39c5.png"
+  },
+  {
+    "revision": "8d8185e5825e13fb3cb53cb0538945eb",
+    "url": "/static/media/bdab@2x.b4840afe.png"
   },
   {
     "revision": "50d3ab13fc7a5a4b841dd3277ff766be",
@@ -50,6 +58,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1c7b442aff5cb473a9abf1f27f6bb9df",
     "url": "/static/media/design.4d5917a6.jpeg"
+  },
+  {
+    "revision": "aac5d2c842ea1112de6491270a6b7fe8",
+    "url": "/static/media/ds100@2x.ac6d7c50.png"
   },
   {
     "revision": "5d591ff90a5cbea861246b67c1f0f1ce",
@@ -134,6 +146,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "bd86aaa72d23c91de85390a93aa6bef2",
     "url": "/static/media/lato-latin-900italic.bd86aaa7.woff2"
+  },
+  {
+    "revision": "0a53d8d6aa14a220ab466ae43a944901",
+    "url": "/static/media/micro@2x.ca02647f.png"
   },
   {
     "revision": "c86c715dad44863468b86beaf4cd9990",
