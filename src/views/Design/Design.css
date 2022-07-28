@@ -25,7 +25,7 @@
     margin-top: 10%;
 }
 
-.design .text-container .small-text {
+.design .small-text {
     font-family: "Lato";
     font-style: normal;
     font-weight: 800;
@@ -35,7 +35,29 @@
     color: #000000;
 }
 
-.design .text-container .big-text {
+.design .text-container-small-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 5%;
+}
+
+.design .medium-text {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.125em;
+    line-height: 150%;
+    color: #000000;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.design .big-text {
     font-family: "lato";
     font-style: normal;
     font-weight: 800;

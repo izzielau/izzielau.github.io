@@ -1,97 +1,157 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400&subset=latin,latin-ext);
 
 .about {
-    height: 150vh;
+    min-height: 100vh;
+    height: 100%;
 
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
-
-    background-image: url('./../../assets/background.png');
-    background-size: cover;
-}
-
-.about .text-container {
-    margin-top: 10%;
-    width: 45vw; 
-
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     flex-direction: column;
 
-    margin-right: 10%;
+    background: #F6F8FB;
+    background-size: cover;
 }
 
-.about .text-container .spacer {
-    height: 25px;
-}
+.about .top {
+    width: 60%;
+    height: 100%;
 
-
-.about .small-text {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875em;
-    line-height: 150%;
-    color: #000000;
-
-    margin-bottom: 15px;
-}
-
-.about .medium-text {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.125em;
-    line-height: 150%;
-    color: #000000;
-
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.about .list-text {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875em;
-    line-height: 150%;
-    color: #000000;
-
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
-
-.about .big-text {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 2.25em;
-    line-height: 150%;
-    display: flex;
-    align-items: center;
-
-    color: #000000;
-
-    margin-top: 0.3em;
-    margin-bottom: 0.5em;
-}
-
-.about .button-container {
-    margin-top: 10%;
-    width: 25vw; 
+    margin-top: 20vh;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    background-size: cover;
 }
 
-.about .button-container .row {
+.about .top .left-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.about .top .left-container .big-text {
+    font-family: DM Sans;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.about .top .left-container .text {
+    font-family: DM Sans;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.about .image {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.about .top .left-container .icon-row {
+    height: 50px;
+    width: 250px;
+
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-    margin-bottom: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.about .top .right-container {
+    width: 100%;
+
+    margin-right: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about .top .right-container .text {
+    font-family: DM Sans;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.about .bottom {
+    width: 60%;
+
+    margin-bottom: 50px;
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+.about .bottom .text {
+    font-family: DM Sans;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.about .bottom .polaroid {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .about .top {
+        width: 60%;
+        height: 100%;
+
+        margin-top: 20vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        background-size: cover;
+    }
+
+    .about .top .left-container .big-text {
+        font-size: 1em;
+    }
+
+    .about .top .right-container .text {
+        font-size: 0.8em;
+    }
+
+    .about .bottom .text {
+        font-size: 0.8em;
+    }
 }

@@ -27,13 +27,22 @@ function Design() {
                 <RectanglePolaroid title="product designer" subtitle="sproul.club" link="/sproul" image={sproul}> </RectanglePolaroid>
                 <RectanglePolaroid title="ui/ux designer" subtitle="onlo" link="/onlo" image={onlo}> </RectanglePolaroid>
             </div>
-            {/* 
-            <div class="row">
-                <RectanglePolaroid title="marketing director" subtitle="sigma psi zeta" link="/sigmas"> </RectanglePolaroid>
-                <RectanglePolaroid title="chair of design" subtitle="afx dance" link="/dance"> </RectanglePolaroid>
-                <RectanglePolaroid title="marketing director" subtitle="web development at berkeley" link="/wdb"> </RectanglePolaroid>
+            <div class="text-container-small-top">
+                <text class="medium-text">other experiences</text>
+                
+                <text class="small-text" style={{fontWeight: 600}}> 
+                    marketing chair for <b style={{color: "#2898FF", marginLeft: 3, marginBottom: 5}}> web development at berkeley </b> 
+                </text>
+                <text class="small-text" style={{fontWeight: 600}}> 
+                    public relations chair for <b style={{color: "#2898FF", marginLeft: 3, marginBottom: 5}}> sigma psi zeta</b> 
+                </text>
+                <text class="small-text" style={{fontWeight: 600}}> 
+                    chair of design for <b style={{color: "#2898FF", marginLeft: 3, marginBottom: 5}}> afx dance</b> 
+                </text>
+                <text class="small-text" style={{fontWeight: 600}}> 
+                    marketing chair for <b style={{color: "#2898FF", marginLeft: 3, marginBottom: 5}}> techfair at berkeley </b> 
+                </text>
             </div>
-            */}
         </div>
     </div>
   );

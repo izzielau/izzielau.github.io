@@ -7,10 +7,12 @@ import blue from './../assets/blue.png';
 const RectanglePolaroid = ({ image, title, subtitle, link }) => {
   return (
       <div className="rectangle-polaroid">
-        <Link to={link} style={{ textDecoration: 'none' }}>
+          <Link to={link} style={{ textDecoration: 'none' }}>
           <div class="imageContainer">
             {image != null ? image : <img class="image" src={blue}></img>}
           </div>
+          </Link>
+          <Link to={link} style={{ textDecoration: 'none' }}>
           <div class="textContainer">
             <text class="big-text">
               {title}
@@ -19,7 +21,8 @@ const RectanglePolaroid = ({ image, title, subtitle, link }) => {
               {subtitle}
             </text>
           </div>
-        </Link>
+          </Link>
+
       </div>
   );
 }

@@ -1,7 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:400&subset=latin,latin-ext);
 
 .landing {
     height: 100vh;
+    font-family: DM Sans;
 
     display: flex;
 
@@ -10,12 +11,12 @@
 
     flex-direction: row;
 
-    background-image: url('./../../assets/background.png');
+    background: #F6F8FB;
     background-size: cover;
 }
 
 .landing .text-container {
-    width: 40vw; 
+    width: 30vw;
 
     display: flex;
 
@@ -25,36 +26,112 @@
     flex-direction: column;
 }
 
-.landing .text-container .small-text {
-    font-family: "Lato";
+.landing .text-container .big-text {
+    font-size: 2.5em;
     font-style: normal;
-    font-weight: 800;
-    font-size: 0.875em;
-    display: flex;
-
-    color: #000000;
+    font-weight: 700;
+    text-align: left;
 }
 
-.landing .text-container .big-text {
-    font-family: "lato";
+.landing .text-container .text {
+    font-size: 1em;
     font-style: normal;
-    font-weight: 800;
-    font-size: 2.25em;
-    
-    color: #000000;
+    font-weight: 400;
+    line-height: 1em;
+    text-align: left;
+    letter-spacing: 0.025em;
+    margin-bottom: 0em;
+}
 
-    margin-top: 0.1em;
-    margin-bottom: 1em;
+.landing .text-container .link {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0em;
+    text-align: left;
+    letter-spacing: 0.025em;
+    text-decoration: none;
 }
 
 
 .landing .button-container {
-    width: 30vw; 
-    
-    display: flex;
+    height: 62vh;
+    width: 40vw;
 
-    align-items: flex-end;
-    justify-content: flex-end;
+    overflow: auto;
+
+    display: flex;
+    justify-content: space-between;
 
     flex-direction: column;
+}
+
+.image {
+    height: 12em;
+    width: 15em;
+    object-fit: cover;
+    border-radius: 15px 0px 0px 15px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .15);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+@media (max-width: 800px) {
+    .landing {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .landing .text-container {
+        margin-top: 10vh;
+        width: 70%;
+        align-items: center;
+    }
+
+    .landing .text-container .big-text {
+        font-size: 2em;
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .landing .text-container .text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: .8em;
+        line-height: 0.5em;
+        text-align: left;
+        letter-spacing: 0.025em;
+        margin-bottom: 0em;
+    }
+
+    .landing .button-container {
+        width: 25em;
+        height: 100%;
+
+        align-items: center;
+    }
+
+    .landing .button-container .image {
+        height: 10em;
+        width: 20em;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .image {
+        height: 12em;
+        width: 15em;
+        object-fit: cover;
+        border-radius: 0px 0px 0px 0px;
+    }
 }

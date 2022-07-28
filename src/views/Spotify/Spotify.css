@@ -1,114 +1,135 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400&subset=latin,latin-ext);
 
 .spotify {
-    height: 450vh;
+    min-height: 100vh;
+    height: 100%;
 
     display: flex;
-
     align-items: center;
     justify-content: flex-start;
-
     flex-direction: column;
 
-    background-image: url('./../../assets/background.png');
+    background: #F6F8FB;
+    background-size: cover;
+
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.spotify::-webkit-scrollbar {
+   display: none;
+}
+
+.spotify .top {
+    width: 60%;
+    height: 100%;
+
+    margin-top: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
     background-size: cover;
 }
 
-.spotify .navigation-menu {
-    width: 250px;
-    height: 500px;
-    border-width: 1px;
-
-    position: fixed;
-    margin-top: 150px;
-    right: 75px;
+.spotify .top .imageContainer {
+    height: 15em;
+    width: 100%;
+    overflow: hidden;
 }
 
-.spotify .text-container {
-    width: 50vw;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+.spotify .top .image {
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    object-fit: cover;
 }
 
-.spotify .text-container .small-text {
-    
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875em;
-    line-height: 150%;
-    color: #000000;
-
-    margin-bottom: 15px;
-}
-
-.spotify .big-text {
-    font-family: "lato";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 2.25em;
-    
-    color: #000000;
-
-    margin-top: 7.5%;
-    margin-bottom: 1.5em;
-}
-
-.spotify .medium-text {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.125em;
-    line-height: 150%;
-    color: #000000;
-
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-
-.spotify .links-container {
-    width: 30vw; 
-    
+.spotify .bottom .imageContainer {
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.spotify .links-container .row {
-    width: 80vw; 
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-
-    margin-bottom: 0.875em;
+.spotify .bottom .image {
+    height: 100%;
+    width: 50%;
+    border-radius: 15px;
+    object-fit: cover;
 }
 
-.spotify .text-container .spacer {
+.spotify .top .big-text {
+    font-family: DM Sans;
+    font-size: 1.25em;
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+
+    line-height: 2em;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.spotify .top .text {
+    font-family: DM Sans;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+
+    line-height: 1.5em;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.spotify .bottom {
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+.spotify .bottom .text {
+    font-family: DM Sans;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.spotify .spacer {
     height: 15px;
 }
 
-.spotify .list-text {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875em;
-    line-height: 150%;
-    color: #000000;
+@media (max-width: 800px) {
+    .spotify .top {
+        width: 60%;
+        height: 100%;
 
-    margin-left: 45px;
-    margin-bottom: 5px;
-}
+        margin-top: 20vh;
 
-.spotify .image {
-    width: 50vw;
-    object-fit: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
 
-    margin-bottom: 50px;
+        background-size: cover;
+    }
+
+    .spotify .top .left-container .big-text {
+        font-size: 1em;
+    }
+
+    .spotify .top .right-container .text {
+        font-size: 0.8em;
+    }
+
+    .spotify .bottom .text {
+        font-size: 0.8em;
+    }
 }

@@ -1,0 +1,43 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+
+    background: #EDD3C1;
+    border-radius: 10px;
+
+    height: 30px;
+    margin: 5px;
+}
+
+.button:hover {
+    background: #562828;
+    color: white;
+}
+
+.button .margin {
+    width: 20px;
+}
+
+.button .tag {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+
+    text-decoration: none;
+    font-family: 'lato';
+    font-size: 10px;
+    font-weight: 700;
+}

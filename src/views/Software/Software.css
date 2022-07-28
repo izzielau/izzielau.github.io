@@ -13,7 +13,7 @@
 }
 
 .software {
-    height: 140vh;
+    height: 100%;
 
     display: flex;
 
@@ -29,8 +29,8 @@
 .software .text-container {
     display: flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
 
     margin-top: 10%;
@@ -39,8 +39,8 @@
 .software .text-container-small-top {
     display: flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
 
     margin-top: 5%;
@@ -109,4 +109,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+}
+
+.software .spacer {
+    height: 100px;
 }

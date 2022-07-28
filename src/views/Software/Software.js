@@ -41,6 +41,8 @@ function Software() {
     const [idealabDropdown, setIdealabDropdown] = useState(false);
     const toggleIdealabDropdown = () => setIdealabDropdown((idealabDropdown) => !idealabDropdown);
 
+    const [allOpen, setAllOpen] = useState(false);
+
     const openAllToggles = () => {
         setAnalystDropdown(true);
         setDSUSDropdown(true);
@@ -50,6 +52,7 @@ function Software() {
         setMicrosoftSWEDropdown(true);
         setVRDropdown(true);
         setIdealabDropdown(true);
+        setAllOpen(true);
     }
 
     const closeAllToggles = () => {
@@ -61,6 +64,7 @@ function Software() {
         setMicrosoftSWEDropdown(false);
         setVRDropdown(false);
         setIdealabDropdown(false);
+        setAllOpen(false);
     }
 
     const OpenAllButton = ({ text }) => {
@@ -97,12 +101,55 @@ function Software() {
                 </div>
             </div>
 
+            {/* 
             <OpenAllButton text="Open all"/>
             <CloseAllButton text="Close all"/>
+            */}
 
             <div class="text-container-small-top">
                 <text class="medium-text">past experiences</text>
 
+                <text class="small-text" style={{marginTop: 5}}>
+                    Data scientist for the Online Learning Services team funded by
+                    <b style={{color: "#2898FF", marginLeft: 3}}>UC Berkeley's Division of Data Science</b>.
+                </text>
+
+                <text class="small-text" style={{marginTop: 5}}>
+                    Data science consultant for the McBride Sisters company as part of 
+                    <b style={{color: "#2898FF", marginLeft: 3}}>Big Data at Berkeley</b>.
+                </text>
+
+                <text class="small-text" style={{marginTop: 5}}>
+                    Used Python, PyTorch, and ML libraries to build NLP models for Bing's core caption team at
+                    <b style={{color: "#2898FF", marginLeft: 3}}>Microsoft</b>.
+                </text>
+
+                <text class="small-text" style={{marginTop: 5}}>
+                    Maintained Python backend and began infrastructure for student accounts at 
+                    <a target="_blank" href="https://berkeleytime.com/landing" style={{textDecoration: "none"}}><b style={{color: "#2898FF", marginLeft: 3}}>BerkeleyTime</b></a>.
+                </text>
+
+                <text class="small-text" style={{marginTop: 5}}>
+                    Implemented more than 7 full-stack mobile applications in iOS/Swift through
+                    <b style={{color: "#2898FF", marginLeft: 3}}>Mobile Developers at Berkeley</b>.
+                </text>
+
+                <text class="small-text" style={{marginTop: 5}}>
+                    Designed and implemented an internal website tool in React for 
+                    <b style={{color: "#2898FF", marginLeft: 3}}>Microsoft</b>.
+                </text>
+
+                <text class="small-text" style={{marginTop: 5}}>
+                    Backend software developer for a biofeedback therapy-focused group within 
+                    <b style={{color: "#2898FF", marginLeft: 3}}>Virtual Reality at Berkeley</b>.
+                </text>
+
+                <text class="small-text" style={{marginTop: 5}}>
+                    Computer vision and product design intern for 
+                    <b style={{color: "#2898FF", marginLeft: 3}}>aiPod</b>, an autonomous vehicle startup at Idealab.
+                </text>
+
+                {/* 
                 <text class="small-text" style={{cursor: "pointer", fontWeight: 600}} onClick={toggleDSUSDropdown}> 
                     data scientist for <b style={{color: "#2898FF", marginLeft: 3, marginBottom: 5}}> uc berkeley division of data science</b> 
                 </text>
@@ -143,7 +190,18 @@ function Software() {
                 </text>
                 {idealabDropdown ? <text class="hover-text"> Implemented computer vision algorithms (PyTorch, Deep Tensor) on different CPU's for an autonomous vehicle startup. </text> : null }
 
+
+                { !allOpen ?
+                    <div>
+                        <div class="spacer"></div>
+                        <text class="medium-text">
+                            {true ? "(´｡• ᵕ •｡`) ♡" : null }
+                        </text> 
+                    </div> : null
+                }
+                */}
             </div>
+            <div className="spacer" />
         </div>
     );
 }

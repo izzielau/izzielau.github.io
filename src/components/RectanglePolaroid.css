@@ -1,65 +1,108 @@
 .rectangle-polaroid {
-  height: 12.5em;
-  width: 15.625em;
+    background: white;
+    border-radius: 15px;
 
-  background: transparent;
-  box-shadow: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.05));
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+    margin-right: 15px;
+    margin-bottom: 15px;
 
-  margin-right: 15px;
-  margin-bottom: 15px;
+    transition: transform .3s;
 
-  transition: transform .3s;
-
+    height: 12em;
 }
 
 .rectangle-polaroid:hover {
-  filter: brightness(65%);
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.025);
 }
 
 .rectangle-polaroid .imageContainer {
-  
+    margin-right: 35px;
+    height: 15em;
+    overflow: hidden;
 }
 
-.rectangle-polaroid .imageContainer .image {
-  height: 9.375em;
-  width: 250px;
-  object-fit: fill;
+.rectangle-polaroid .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 35px;
+    width: 100%;
+    object-fit: contain;
 }
 
 .rectangle-polaroid .textContainer .big-text {
-  font-family: Lato;
+  font-family: DM Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 18px;
-  display: flex;
-  align-items: center;
 
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  margin-right: 15px;
 
   color: #000000;
 }
 
 .rectangle-polaroid .textContainer .small-text {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 0.875em;
-  color: #000000;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    color: #000000;
+    margin-right: 35px;
+    margin-bottom: 35px;
 }
 
-.rectangle-polaroid .textContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+@media (max-width: 800px) {
+    .rectangle-polaroid {
+        background: white;
+        border-radius: 15px;
 
-  height: 12.5em - 9.375em;
-  width: 250px;
-  object-fit: contain;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-right: 0px;
+
+        transition: transform .3s;
+
+        height: 100%;
+        width: 20em;
+    }
+
+    .rectangle-polaroid .imageContainer {
+        margin-right: 35px;
+        height: 10em;
+        overflow: hidden;
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .rectangle-polaroid .textContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .rectangle-polaroid .textContainer .big-text {
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+
+    .rectangle-polaroid .textContainer .small-text {
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
 }

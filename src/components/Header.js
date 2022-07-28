@@ -1,20 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './Header.css';
-import CursiveButton from './CursiveButton.js'
-import Button from './Button.js'
+import Button from './NavButton.js'
 
-const Header = () => {
+const Header = (active) => {
     return (
         <div className="header">
             <div class="left">
-                <Button text="Home" link="/"/>
             </div>
             <div class="right">
-                <Button text="About" link="/about"/>
-                <Button text="Software" link="/software"/>
-                <Button text="Design" link="/design"/>
+                <Button text="HOME" link="/"/>
+                <Button text="ABOUT ME" link="/about"/>
             </div>
         </div>
     );
