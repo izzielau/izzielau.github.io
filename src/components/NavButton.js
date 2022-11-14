@@ -7,8 +7,8 @@ const NavButton = ({ text, link }) => {
     return(
         <div>
             <Link to={link} style={{ textDecoration: 'none' }}>
-                <div className="nav-button" >
-                    {text}
+                <div className="nav-button">
+                    <p class="text">{text}</p>
                 </div>
             </Link>
         </div>

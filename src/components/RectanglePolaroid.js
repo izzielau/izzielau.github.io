@@ -4,26 +4,20 @@ import { Link } from 'react-router-dom';
 import './RectanglePolaroid.css';
 import blue from './../assets/blue.png';
 
-const RectanglePolaroid = ({ image, title, subtitle, link }) => {
+const RectanglePolaroid = ({ image, title, subtitle, description, link }) => {
   return (
-      <div className="rectangle-polaroid">
-          <Link to={link} style={{ textDecoration: 'none' }}>
-          <div class="imageContainer">
-            {image != null ? image : <img class="image" src={blue}></img>}
-          </div>
-          </Link>
-          <Link to={link} style={{ textDecoration: 'none' }}>
-          <div class="textContainer">
-            <text class="big-text">
-              {title}
-            </text>
-            <text class="small-text">
-              {subtitle}
-            </text>
-          </div>
-          </Link>
-
-      </div>
+    <div className="rectangle-polaroid">
+      <Link to={link} style={{ textDecoration: 'none' }}>
+        <div class="image">
+          {image != null ? image : <img class="image" src={blue}></img>}
+        </div>
+        <div class="text">
+          <p class="title"> {title} </p>
+          <p class="subtitle"> {subtitle} </p>
+          <p class="description"> {description} </p>
+        </div>
+      </Link>
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Header.css';
-import Button from './NavButton.js'
+import NavButton from './NavButton.js'
 
 const Header = (active) => {
     return (
@@ -9,8 +9,8 @@ const Header = (active) => {
             <div class="left">
             </div>
             <div class="right">
-                <Button text="HOME" link="/"/>
-                <Button text="ABOUT ME" link="/about"/>
+                <NavButton text="HOME" link="/"/>
+                <NavButton text="ABOUT ME" link="/about"/>
             </div>
         </div>
     );

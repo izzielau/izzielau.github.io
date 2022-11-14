@@ -2,8 +2,6 @@
     height: 40px;
     width: 40px;
 
-    box-shadow: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.05));
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,11 +11,10 @@
     background: transparent;
     border-radius: 15px;
     color: black;
-
 }
 
 .icon-button:hover {
-    background: #02073E;
+    background: black;
     color: white;
 }
 

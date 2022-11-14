@@ -1,7 +1,6 @@
 .nav-button {
     display: flex;
     flex-direction: row;
-
     align-items: right;
     justify-content: right;
 
@@ -9,13 +8,10 @@
     width: 9.375em;
 
     font-family: DM Sans;
-    font-size: 14px;
+    font-size: 1em;
     font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     text-align: right;
-
     color: #000000;
 
     background: transparent;
@@ -23,6 +19,13 @@
     margin-right: 25px;
 }
 
-.nav-button:hover {
-    font-weight: 600;
+.nav-button .text {
+    line-height: 0.5;
+    border-bottom: 2px solid transparent;
 }
+
+.nav-button .text:hover {
+    line-height: 0.5;
+    border-bottom: 2px solid black;
+}
+

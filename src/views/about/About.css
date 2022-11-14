@@ -13,7 +13,7 @@
     background-size: cover;
 }
 
-.about .top {
+.about .centered {
     width: 60%;
     height: 100%;
 
@@ -27,16 +27,7 @@
     background-size: cover;
 }
 
-.about .top .left-container {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.about .top .left-container .big-text {
+.about .centered .big-text {
     font-family: DM Sans;
     font-size: 1.5em;
     font-style: normal;
@@ -47,23 +38,7 @@
     margin-bottom: 0px;
 }
 
-.about .top .left-container .text {
-    font-family: DM Sans;
-    font-size: 1em;
-    font-style: normal;
-    font-weight: 400;
-    margin-bottom: 0px;
-    line-height: 1.5em;
-    text-align: left;
-}
-
-.about .image {
-    width: 100%;
-    border-radius: 15px;
-    object-fit: cover;
-}
-
-.about .top .left-container .icon-row {
+.about .centered .icon-row {
     height: 50px;
     width: 250px;
 
@@ -73,85 +48,60 @@
     justify-content: center;
 
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
-.about .top .right-container {
+.about .content {
     width: 100%;
 
-    margin-right: 0px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.about .top .right-container .text {
-    font-family: DM Sans;
-    font-size: 1em;
-    font-style: normal;
-    font-weight: 400;
-    margin-bottom: 0px;
-    line-height: 1.5em;
-    text-align: left;
-}
-
-.about .bottom {
-    width: 60%;
-
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     margin-top: 15px;
 
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.about .bottom .text {
+.about .content .text {
     font-family: DM Sans;
     font-size: 1em;
     font-style: normal;
     font-weight: 400;
     margin-bottom: 0px;
     line-height: 1.5em;
+}
+
+.about .content .left-panel {
+    width: 50%;
     text-align: left;
 }
 
-.about .bottom .polaroid {
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.about .content .right-panel {
+    width: 45%;
+    text-align: right;
 }
 
-@media (max-width: 800px) {
-    .about .top {
-        width: 60%;
-        height: 100%;
+.about .spotify-embed {
+    margin-top: 15px;
+    border-radius: 15px;
+}
 
-        margin-top: 20vh;
-
-        display: flex;
+@media (max-width: 1000px) {
+    .about .content {
+        width: 100%;
         flex-direction: column;
-        align-items: center;
         justify-content: space-between;
-
-        background-size: cover;
+        align-items: center;
     }
 
-    .about .top .left-container .big-text {
-        font-size: 1em;
+    .about .content .left-panel {
+        width: 100%;
+        text-align: center;
     }
 
-    .about .top .right-container .text {
-        font-size: 0.8em;
-    }
-
-    .about .bottom .text {
-        font-size: 0.8em;
+    .about .content .right-panel {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
     }
 }

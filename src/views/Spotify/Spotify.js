@@ -1,9 +1,5 @@
 import React from 'react';
 
-import PictureButton from './../../components/PictureButton.js'
-import IconButton from './../../components/IconButton.js'
-import Carousel from './../../components/Carousel.js'
-
 import './Spotify.css';
 
 import s from './../../assets/spotify@4x.png';

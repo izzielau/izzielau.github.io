@@ -1,108 +1,82 @@
 .rectangle-polaroid {
+    min-width: 20em;
+    height: 100%;
+
     background: white;
     border-radius: 15px;
 
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
-
-    margin-right: 15px;
-    margin-bottom: 15px;
 
     transition: transform .3s;
 
-    height: 12em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.rectangle-polaroid .image {
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    overflow: hidden;
+}
+
+.rectangle-polaroid .text {
+    background: white;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.rectangle-polaroid .text .title {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.75em;
+    color: #000000;
+
+    margin-top: 2em;
+    margin-bottom: 0em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.rectangle-polaroid .text .subtitle {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.75em;
+    color: #0047AB;
+
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.rectangle-polaroid .text .description {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    color: #000000;
+
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 .rectangle-polaroid:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.025);
 }
 
-.rectangle-polaroid .imageContainer {
-    margin-right: 35px;
-    height: 15em;
-    overflow: hidden;
-}
 
-.rectangle-polaroid .textContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 35px;
-    width: 100%;
-    object-fit: contain;
-}
-
-.rectangle-polaroid .textContainer .big-text {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1em;
-  line-height: 18px;
-
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-  margin-right: 15px;
-
-  color: #000000;
-}
-
-.rectangle-polaroid .textContainer .small-text {
-    font-family: DM Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.8em;
-    line-height: 1.5em;
-    color: #000000;
-    margin-right: 35px;
-    margin-bottom: 35px;
-}
-
-@media (max-width: 800px) {
-    .rectangle-polaroid {
-        background: white;
-        border-radius: 15px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        margin-right: 0px;
-
-        transition: transform .3s;
-
-        height: 100%;
-        width: 20em;
-    }
-
-    .rectangle-polaroid .imageContainer {
-        margin-right: 35px;
-        height: 10em;
-        overflow: hidden;
-        border-radius: 15px 15px 0px 0px;
-    }
-
-    .rectangle-polaroid .textContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-
-        width: 100%;
-        object-fit: contain;
-    }
-
-    .rectangle-polaroid .textContainer .big-text {
-        margin-left: 1.5em;
-        margin-right: 1.5em;
-    }
-
-    .rectangle-polaroid .textContainer .small-text {
-        margin-left: 1.5em;
-        margin-right: 1.5em;
-        margin-bottom: 1.5em;
-    }
-
-}
