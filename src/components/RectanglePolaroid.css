@@ -1,5 +1,5 @@
 .rectangle-polaroid {
-    min-width: 20em;
+    min-width: 17.5em;
     height: 100%;
 
     background: white;
@@ -53,7 +53,7 @@
     font-weight: bold;
     font-size: 1em;
     line-height: 1.75em;
-    color: #0047AB;
+    color: #4285F4;
 
     margin-top: 0em;
     margin-bottom: 0em;

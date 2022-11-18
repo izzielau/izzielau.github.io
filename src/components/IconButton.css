@@ -10,11 +10,11 @@
     font-size: 16px;
     background: transparent;
     border-radius: 15px;
-    color: black;
+    color: #4285F4;
 }
 
 .icon-button:hover {
-    background: black;
+    background: #4285F4;
     color: white;
 }
 

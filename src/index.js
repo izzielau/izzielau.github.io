@@ -8,6 +8,8 @@ import Header from './components/Header';
 import Landing from './views/landing/Landing';
 import About from './views/about/About';
 import Spotify from './views/spotify/Spotify'
+import Datathon from './views/datathon/Datathon'
+import Microsoft from './views/microsoft/Microsoft'
 
 import * as serviceWorker from './serviceWorker';
 import TagManager from 'react-gtm-module'
@@ -25,6 +27,8 @@ const routing = (
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/about" component={About} />
                 <Route path="/spotify" component={Spotify} />
+                <Route path="/datathon" component={Datathon} />
+                <Route path="/microsoft" component={Microsoft} />
             </div>
         </Router>
     </div>

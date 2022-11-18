@@ -1,0 +1,36 @@
+.tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    height: fit-content;
+    width: fit-content;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    max-width: 100%;
+
+    background: transparent;
+
+    border: 3px solid;
+    border-radius: 15px;
+    border-color: #4285F4;
+
+    font-family: DM Sans;
+    font-size: 0.85em;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.tag .text {
+    margin-top: 0px;
+    color: #4285F4;
+}
+
+.tag:hover {
+    color: #00A1F1;
+}
+
