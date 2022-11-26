@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './RectanglePolaroid.css';
 import blue from './../assets/blue.png';
+import Tag from './../components/Tag.js';
 
 const RectanglePolaroid = ({ image, title, subtitle, description, link }) => {
   return (

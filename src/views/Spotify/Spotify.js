@@ -1,39 +1,37 @@
 import React from 'react';
-
+import Tag from '../../components/Tag.js'
 import './Spotify.css';
 
-import s from './../../assets/spotify@4x.png';
 import gen from "./../../assets/spotify-demos/genres.png"
 import pop from "./../../assets/spotify-demos/popularity.png"
 import roc from "./../../assets/spotify-demos/rhizome_roc.png"
 
 function Spotify() {
-    var image = <img class="image" src={s}></img>;
-
     return (
         <div class="spotify">
-            <div class="top" name="top">
-                <div class="imageContainer">
-                  {image != null ? image : <img class="image" src={image}></img>}
-                </div>
-                <p class="big-text"> Analytics & Modeling My Listening Habits </p>
-                <p class="text"> A project built using Python, Jupyter Notebook, and the Spotify API. <br/> Inspired by my data science + ML courses, fueled by my love for music. </p>
+            <div class="heading">
+                <p class="title">Spotify</p>
+                <p class="subtitle">Self-designed project</p>
+                <p class="subtitle">A project built using the Spotify API and data from 3 years of listening habits. Inspired by my data science and ML courses, fueled by my love for music.</p>
             </div>
-            <div class="bottom">
-                <p class="spacer"> </p>
+            <div class="content">
+                <div class="tag-row">
+                    <Tag text="Machine Learning"></Tag>
+                    <Tag text="Data Science"></Tag>
+                    <Tag text="Software Engineering"></Tag>
+                </div>
                 <p class="text"> <b> Exploration </b> </p>
                 <p class="text"> I first explored which genres I listened to the most by aggregating each genres' appearance in the list of genres corresponding to my top 20 artists. </p>
                 <div class="imageContainer">
-                    <img className="image" src={gen} />
+                    <img class="image" src={gen} />
                 </div>
                 <p class="text"> I noticed that the API returns a feature called "popularity" for each artist, and have always been a little curious about whether the music I listen to is mainstream. To find out, I graphed the correlation between artist ranking and popularity: </p>
                 <div class="imageContainer">
                     <img className="image" src={pop} />
                 </div>
                 <p class="text"> With an r-value of -0.44945735259442465, I'd say there is definitely a chance that this could be true. A negative r-value of this magnitude could imply that my more popular artists have higher popularity scores-- a.k.a. a negative correlation between personal preference and artist popularity. </p>
-                <p class="spacer"> </p>
                 <p class="text"> <b> Modeling </b> </p>
-                <p class="text"> I personally have had a variety of hit-and-misses with Spotify's recommendations algorithm. When I saw that                   the API could return certain features of song tracks, I wanted to see if I could build myself a personalized                   recommendations algorithm using these features and the information that I know about my personal preferences. </p>
+                <p class="text"> I personally have had a variety of hit-and-misses with Spotify's recommendations algorithm. When I saw that the API could return certain features of song tracks, I wanted to see if I could build myself a personalized                   recommendations algorithm using these features and the information that I know about my personal preferences. </p>
                 <p class="text"> The features for each track returned by the API include:
                     <ul>
                           <li>acousticness</li>
@@ -67,12 +65,13 @@ function Spotify() {
                 <div class="imageContainer">
                     <img className="image" src={roc} />
                 </div>
-                <p class="text"> I also wanted to test how well the model responds to new data, so I created a completely new playlist of 40 songs I've never listened to before and had the model predict 0-1 labels of preference. I listened to the songs and manually labeled them, and then calculated the model's accuracy to be 65%.</p>
-                <p class="text"> This wasn't as stastically significant as I wanted it to be (p=0.04). Some ideas I have moving forward in the next iteration of this model are to add:
+                <p class="text"> I also wanted to test how well the model responds to new data, so I created a completely new playlist of 40 songs I've never listened to before as a test set. After I listened to the songs and manually labeled them as gold labels, i then calculated the model's accuracy on the test dataset to be 65%.</p>
+                <p class="text"> This was not a statistically significant result (p=0.04), but the API was fun to implement and showed some promising results! Some ideas I have moving forward in the next iteration of this model are to add:
                     <ul>
                         <li>Add genre as a feature</li>
                         <li>Add artist name as a feature</li>
                         <li>Add album name as a feature</li>
+                        <li>Incorporate other APIs for more external information</li>
                     </ul>
                 </p>
             </div>

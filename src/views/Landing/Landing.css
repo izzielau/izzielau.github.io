@@ -20,7 +20,7 @@
 
     height: 100%;
 
-    margin-top: 15vh;
+    margin-top: 10vh;
     margin-bottom: 1em;
 
     animation: transitionIn 1s;
@@ -36,6 +36,17 @@
     font-style: normal;
     font-weight: 700;
     line-height: 2em;
+}
+
+.landing .introduction .header p {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.01em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(10, end),
+      blink-caret .75s step-end infinite;
 }
 
 .landing .row {
@@ -107,4 +118,14 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: auto }
+}
+    
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
 }
