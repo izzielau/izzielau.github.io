@@ -7,11 +7,13 @@ import './Landing.css';
 import a from './../../assets/datathon.png';
 import b from './../../assets/microsoft.png';
 import c from './../../assets/spotify.png';
+import d from './../../assets/music.png';
 
 function Landing() {
     var datathon = <img class="image" src={a}></img>;
     var microsoft = <img class="image" src={b}></img>;
     var spotify = <img class="image" src={c}></img>;
+    var info = <img class="image" src={d}></img>;
 
     return (
         <div class="landing">
@@ -21,7 +23,8 @@ function Landing() {
             <div class="row">
                 <RectanglePolaroid title="Machine Learning" subtitle="Microsoft" description="Implementing various NLP models for the Core Search & AI Metrics team." link="/microsoft" image={microsoft} tag="software"> </RectanglePolaroid>
                 <RectanglePolaroid title="Blueprint Datathon" subtitle="Stanford University" description="Published a data science research paper on the COVID-19 pandemic." link="/datathon" image={datathon} tag="software"> </RectanglePolaroid>
-                <RectanglePolaroid title="Spotify Research Project" subtitle="Spotify" description="Designed a logistic regression model for music recommendation." link="/spotify" image={spotify} tag="software"> </RectanglePolaroid>
+                <RectanglePolaroid title="Research Project" subtitle="Spotify" description="Designed a logistic regression model for music recommendation." link="/spotify" image={spotify} tag="software"> </RectanglePolaroid>
+                <RectanglePolaroid title="Research Project" subtitle="Info 159 • NLP" description="A research paper on the state-of-the-art ML models for music." link="/survey" image={info} tag="software"> </RectanglePolaroid>
                 {/*
                 <RectanglePolaroid title="Product Manager" subtitle="Akron Children's Hospital" description="Led a team of 8 to build a React application for streamlining the diagnosis of craniosynostosis in infants." link="/" image={akrn} tag="pm"> </RectanglePolaroid>
                 <RectanglePolaroid title="VP of Development & Analytics" subtitle="Big Data at Berkeley" description="Founder of this role, pioneered the application of analytics to marketing to optimize recruitment strategies." link="/" image={bdab} tag="pm"> </RectanglePolaroid>

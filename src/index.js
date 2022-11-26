@@ -10,6 +10,7 @@ import About from './views/about/About';
 import Spotify from './views/spotify/Spotify'
 import Datathon from './views/datathon/Datathon'
 import Microsoft from './views/microsoft/Microsoft'
+import Survey from './views/survey/Survey'
 
 import * as serviceWorker from './serviceWorker';
 import TagManager from 'react-gtm-module'
@@ -29,6 +30,7 @@ const routing = (
                 <Route path="/spotify" component={Spotify} />
                 <Route path="/datathon" component={Datathon} />
                 <Route path="/microsoft" component={Microsoft} />
+                <Route path="/survey" component={Survey} />
             </div>
         </Router>
     </div>

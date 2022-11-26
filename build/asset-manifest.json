@@ -1,29 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.26488c7a.chunk.css",
-    "main.js": "/static/js/main.f2e197a9.chunk.js",
-    "main.js.map": "/static/js/main.f2e197a9.chunk.js.map",
+    "main.css": "/static/css/main.319af3ca.chunk.css",
+    "main.js": "/static/js/main.eb2e8943.chunk.js",
+    "main.js.map": "/static/js/main.eb2e8943.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.58a66dfa.js",
     "runtime-main.js.map": "/static/js/runtime-main.58a66dfa.js.map",
-    "static/js/2.cba941e8.chunk.js": "/static/js/2.cba941e8.chunk.js",
-    "static/js/2.cba941e8.chunk.js.map": "/static/js/2.cba941e8.chunk.js.map",
+    "static/js/2.d300fe80.chunk.js": "/static/js/2.d300fe80.chunk.js",
+    "static/js/2.d300fe80.chunk.js.map": "/static/js/2.d300fe80.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0ffd175d2f7570dd081b26c0b9a692f1.js": "/precache-manifest.0ffd175d2f7570dd081b26c0b9a692f1.js",
+    "precache-manifest.8ee292f8eb647e146f18a9486863919d.js": "/precache-manifest.8ee292f8eb647e146f18a9486863919d.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.26488c7a.chunk.css.map": "/static/css/main.26488c7a.chunk.css.map",
-    "static/js/2.cba941e8.chunk.js.LICENSE.txt": "/static/js/2.cba941e8.chunk.js.LICENSE.txt",
+    "static/css/main.319af3ca.chunk.css.map": "/static/css/main.319af3ca.chunk.css.map",
+    "static/js/2.d300fe80.chunk.js.LICENSE.txt": "/static/js/2.d300fe80.chunk.js.LICENSE.txt",
     "static/media/blue.c746e77c.png": "/static/media/blue.c746e77c.png",
     "static/media/datathon.ae780302.png": "/static/media/datathon.ae780302.png",
     "static/media/genres.4a409caa.png": "/static/media/genres.4a409caa.png",
     "static/media/microsoft.51c7bc2d.png": "/static/media/microsoft.51c7bc2d.png",
+    "static/media/music.a1321515.png": "/static/media/music.a1321515.png",
     "static/media/popularity.e3a6074c.png": "/static/media/popularity.e3a6074c.png",
     "static/media/rhizome_roc.c2e33a7c.png": "/static/media/rhizome_roc.c2e33a7c.png",
     "static/media/spotify.051475ef.png": "/static/media/spotify.051475ef.png"
   },
   "entrypoints": [
     "static/js/runtime-main.58a66dfa.js",
-    "static/js/2.cba941e8.chunk.js",
-    "static/css/main.26488c7a.chunk.css",
-    "static/js/main.f2e197a9.chunk.js"
+    "static/js/2.d300fe80.chunk.js",
+    "static/css/main.319af3ca.chunk.css",
+    "static/js/main.eb2e8943.chunk.js"
   ]
 }

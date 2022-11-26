@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400&subset=latin,latin-ext);
+
+.survey {
+    min-height: 100vh;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    background: #F6F8FB;
+    background-size: cover;
+
+    max-width: 100%;
+    overflow-x: hidden;
+
+}
+
+.survey .heading {
+    width: 60vw;
+    margin-top: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: transitionIn 1s;
+
+}
+
+.survey .heading .title {
+    font-family: DM Sans;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.survey .heading .subtitle {
+    font-family: DM Sans;
+    font-size: 1.15em;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5em;
+
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.survey .heading .icon-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.survey .content {
+    width: 60vw;
+    margin-top: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+.survey .content .tag-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.survey .content .text {
+    font-family: DM Sans;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: 1.5em;
+}
+
+.survey .icon-row {
+    margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+    .survey {
+
+    }
+}
+
+@keyframes transitionIn {
+    from {
+        transform: translateY(-2vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
