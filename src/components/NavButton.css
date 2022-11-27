@@ -1,8 +1,8 @@
 .nav-button {
     display: flex;
     flex-direction: row;
-    align-items: right;
-    justify-content: right;
+    align-items: center;
+    justify-content: center;
 
     height: 3.125em;
     width: 9.375em;
@@ -20,12 +20,12 @@
 }
 
 .nav-button .text {
-    line-height: 0.5;
+    line-height: 1.75;
     border-bottom: 2px solid transparent;
 }
 
 .nav-button .text:hover {
-    line-height: 0.5;
+    line-height: 1.75;
     border-bottom: 2px solid black;
 }
 

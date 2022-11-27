@@ -1,5 +1,5 @@
 .header {
-    position: absolute;
+    position: fixed;
 
     display: flex;
     flex-direction: row;
@@ -8,9 +8,11 @@
 
     text-decoration: none;
 
-    margin-top: 50px;
-    height: 50px;
+    height: 7.5em;
     width: 100vw;
+
+    background: #F6F8FB;
+    background: linear-gradient(to top, rgba(255,0,0,0), #F6F8FB);
 }
 
 .header .right {
@@ -18,5 +20,22 @@
     flex-direction: row;
     justify-content: flex-end;
 
-    margin-right: 50px;
+    margin-top: 2.5em;
+    margin-left: 2.5em;
+}
+
+
+@media (max-width: 900px) {
+    .header {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header .right {
+        align-items: center;
+        justify-content: center;
+        background: blue;
+        margin-left: 0em;
+        margin-right: 0em;
+    }
 }

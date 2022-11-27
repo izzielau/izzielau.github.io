@@ -18,7 +18,7 @@ function Landing() {
     return (
         <div class="landing">
             <div class="introduction">
-                <p class="header"> Hey there, I'm Izzie! </p>
+                <p class="welcome"> Hey there, I'm Izzie! </p>
             </div>
             <div class="row">
                 <RectanglePolaroid title="Machine Learning" subtitle="Microsoft" description="Implementing various NLP models for the Core Search & AI Metrics team." link="/microsoft" image={microsoft} tag="software"> </RectanglePolaroid>

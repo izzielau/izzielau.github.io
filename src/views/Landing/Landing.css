@@ -26,7 +26,7 @@
     animation: transitionIn 1s;
 }
 
-.landing .introduction .header {
+.landing .introduction .welcome {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +38,7 @@
     line-height: 2em;
 }
 
-.landing .introduction .header p {
+.landing .introduction .welcome p {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
@@ -61,16 +61,8 @@
     overflow-y: hidden;
     overflow-x: auto;
 
-    margin-top: 3em;
     margin-bottom: 1em;
 
-}
-
-.landing .row .header {
-    font-size: 2.5em;
-    font-style: normal;
-    font-weight: 700;
-    text-align: left;
 }
 
 .landing .icon-row {
@@ -97,6 +89,13 @@
 }
 
 @media (max-width: 900px) {
+    .landing {
+    }
+
+    .landing .introduction {
+        margin-top: 15vh;
+    }
+
     .landing .row {
         width: 80%;
         flex-direction: column;

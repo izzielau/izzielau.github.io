@@ -1,9 +1,8 @@
 .rectangle-polaroid {
-    min-width: 16em;
+    min-width: 15.5em;
     height: 100%;
 
     background: white;
-    border-radius: 15px;
 
     display: flex;
     flex-direction: column;
@@ -15,17 +14,20 @@
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: 1em;
+
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: transparent;
 }
 
 .rectangle-polaroid .image {
     width: 100%;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     overflow: hidden;
 }
 
 .rectangle-polaroid .text {
-    background: white;
-    border-radius: 15px;
+    border-radius: 10px;
 
     display: flex;
     flex-direction: column;
@@ -76,7 +78,10 @@
 }
 
 .rectangle-polaroid:hover {
+    border: 2px solid;
+    border-radius: 12px;
+    border-color: #4285F4;
+
+    background: rgba(66, 133, 244, 0.5);
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.025);
 }
-
-

@@ -14,7 +14,7 @@
 
     background: transparent;
 
-    border: 3px solid;
+    border: 2px solid;
     border-radius: 15px;
     border-color: #4285F4;
 
@@ -23,6 +23,7 @@
 
     margin-right: 10px;
     margin-bottom: 10px;
+    user-select: none;
 }
 
 .tag .text {
