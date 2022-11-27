@@ -8,12 +8,12 @@ function About() {
             <div class="centered">
                 <div class="content">
                     <div class="left-panel">
-                        <p class="text"> <b> Nice to see you here! :-) </b> </p>
-                        <p class="text"> I studied Computer Science, Cognitive Science, Data Science, and Entrepreneurship at University of California, Berkeley. </p>
+                        <p class="text"> Nice to see you here! :-) </p>
+                        <p class="text"> My name's Izzie and I studied Computer Science, Cognitive Science, Data Science, and Entrepreneurship at University of California, Berkeley. </p>
                         <p class="text"> I'm currently working in data science and machine learning in the Core Search & AI Metrics team at Microsoft! </p>
-                        <p class="text"> Avid learner of all things at the intersection of neuroscience, technology, and philosophy. </p>
-                        <p class="text"> My ideal night in: my cloud lamp, a lavender-scented candle, a slightly-caffeinated beverage, one of the podcasts on my to-listen list, and a comfy video game. :3 </p>
-                        <p class="text"> Passionate consumer of EDM (been to 32 events and counting)! </p>
+                        <p class="text"> I am an avid learner of all things at the intersection of neuroscience, technology, and philosophy. </p>
+                        <p class="text"> My ideal night in: a lavender-scented candle, a slightly-caffeinated beverage, one of the podcasts on my to-listen list, and a comfy video game. :3 </p>
+                        <p class="text"> Passionate listener of EDM (been to 32 events and counting)! </p>
                         <p class="text"> ପ(๑•ᴗ•๑)ଓ ♡ </p>
                     </div>
                     <div class="right-panel">
