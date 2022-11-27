@@ -8,7 +8,7 @@ const BackButton = ({ text, link }) => {
         <div>
             <Link to={link} style={{ textDecoration: 'none' }}>
                 <div className="back-button">
-                    <p class="text">{text}</p>
+                    <p class="text"><b>{text}</b></p>
                 </div>
             </Link>
         </div>
