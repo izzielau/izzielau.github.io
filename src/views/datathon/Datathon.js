@@ -26,8 +26,7 @@ function Datathon() {
                         <Tag text="Data Science"></Tag>
                     </div>
                     <p class="text"> 
-                        It was a very spontaneous decision to join some of my friends in Big Data at Berkeley, 
-                        a consulting club I joined at the beginning of junior year, in this three-day datathon. 
+                        It was a very spontaneous decision to join some of my friends in this three-day datathon. 
                         It was my first time even hearing the term "datathon" (data marathon?), but with my three 
                         other incredibly sweet and talented teammates, it quickly became one of my favorite experiences 
                         during COVID. I remember being aware of the sunrise slowly illuminating my pitch-black living 
