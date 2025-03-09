@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 import './index.css';
 
 import Header from './components/Header';
-import Landing from './views/landing/Landing';
+import Landing from './views/Landing/Landing';
 import About from './views/about/About';
 import Spotify from './views/spotify/Spotify'
 import Datathon from './views/datathon/Datathon'
@@ -13,12 +13,6 @@ import Microsoft from './views/microsoft/Microsoft'
 import Survey from './views/survey/Survey'
 
 import * as serviceWorker from './serviceWorker';
-import TagManager from 'react-gtm-module'
-
-const tagManagerArgs = {
-    gtmId: 'G-29VY8EL103'
-}
-TagManager.initialize(tagManagerArgs)
 
 const routing = (
     <div>

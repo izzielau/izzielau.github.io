@@ -1,6 +1,6 @@
 import React from 'react';
-import RectanglePolaroid from './../../components/RectanglePolaroid.js'
-import IconButton from './../../components/IconButton.js'
+import RectanglePolaroid from '../../components/RectanglePolaroid.js'
+import IconButton from '../../components/IconButton.js'
 
 import './Landing.css';
 

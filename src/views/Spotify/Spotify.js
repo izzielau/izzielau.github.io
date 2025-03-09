@@ -3,7 +3,7 @@ import Tag from '../../components/Tag.js'
 
 import './Spotify.css';
 
-import BackButton from './../../components/BackButton.js'
+import BackButton from '../../components/BackButton.js'
 
 import gen from "./../../assets/spotify-demos/genres.png"
 import pop from "./../../assets/spotify-demos/popularity.png"
