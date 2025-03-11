@@ -53,7 +53,7 @@
     "react-pdf": "^5.0.0",
     "react-pdf-js": "^5.1.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.1",
     "typeface-lato": "^1.1.13",
     "typeface-roboto": "0.0.75"
   },
