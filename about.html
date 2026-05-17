@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Izzie Lau — About Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <header class="site-header">
+            <div class="header-inner">
+                <div class="brand-group">
+                    <div class="brand">IZZIE LAU</div>
+                    <div class="social-links">
+                        <a class="social-button" href="https://linkedin.com/in/izzielau" target="_blank"
+                            rel="noreferrer" title="LinkedIn" aria-label="LinkedIn">🔗</a>
+                        <a class="social-button" href="https://github.com/izzielau" target="_blank" rel="noreferrer"
+                            title="GitHub" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+                <nav class="site-nav">
+                    <a class="nav-button" href="index.html">Home</a>
+                    <a class="nav-button active" href="about.html">About Me</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="about-section">
+                <div class="about-grid">
+                    <div class="about-left">
+                        <p>My name's Izzie and I studied Computer Science, Cognitive Science, Data Science, and
+                            Entrepreneurship at University of California, Berkeley. I'm currently working in applied
+                            research on Core Search & AI Metrics team at Microsoft.</p>
+                        <p>I am an avid learner of all things at the intersection of neuroscience, technology, and
+                            philosophy. My ideal cozy day: a scented candle, matcha latte with salted cheese foam, and
+                            multi-tasking between some vibe-coding and a book. :3</p>
+                        <p>Some things I do on the side:</p>
+                        <ul>
+                            <li><b>passionate EDM listener</b> (<i>qualifications:</i> been to 80+ events, top 0.005% of
+                                ILLENIUM listeners, top 0.05% of Knock2 listeners)!</li>
+                            <li><b>amateur crab fisher</b></li>
+                            <li><b>training for my first marathon...</b> (13.1 x 6!)</li>
+                            <li><b>learning how to perform the world's first triple wombo asdfjhlkgala combo on a
+                                    snowboard</b> (would not recommend trying @ home)</li>
+                        </ul>
+                        <p>ପ(๑•ᴗ•๑)ଓ ♡</p>
+                    </div>
+                    <aside class="about-right">
+                        <iframe class="spotify-embed"
+                            src="https://open.spotify.com/embed/playlist/3bxMxrIYazwlOmuyVsQHJo?utm_source=generator&amp;theme=0"
+                            width="100%" height="380" frameborder="0"
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy" allowfullscreen></iframe>
+                        <p></p>
+                        <div class="gr_container">
+                            <h2 class="gr_header"><a rel="nofollow"
+                                    href="https://www.goodreads.com/review/list/192973244-izzie?shelf=read&utm_medium=api&utm_source=custom_widget">izzie's
+                                    bookshelf: recently read</a></h2>
+                            <div id="goodreadsShelf"></div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create Goodreads list of books.
+            // goodreads.com/user/edit?tab=widgets
+            const books = [
+                {
+                    title: 'Outlive: The Science & Art of Longevity',
+                    author: 'Peter Attia',
+                    rating: 5,
+                },
+                {
+                    title: 'If I Live to Be 100: Lessons from the Centenarians',
+                    author: 'Neenah Ellis',
+                    rating: 3,
+                },
+                {
+                    title: 'Brainscapes: The Warped, Wondrous Maps Written in Your Brain―And How They Guide You',
+                    author: 'Rebecca Schwarzlose',
+                    rating: 2,
+                },
+                {
+                    title: 'Thinking In Systems: A Primer',
+                    author: 'Donella H. Meadows',
+                    rating: 3,
+                },
+                {
+                    title: 'The Four: The Hidden DNA of Amazon, Apple, Facebook, and Google',
+                    author: 'Scott Galloway',
+                    rating: 5,
+                },
+                {
+                    title: 'Chip War: The Fight for the World\'s Most Critical Technology',
+                    author: 'Chris Miller',
+                    rating: 5,
+                },
+                {
+                    title: 'A Random Walk Down Wall Street: The Time-Tested Strategy for Successful Investing',
+                    author: 'Burton G. Malkiel',
+                    rating: 4,
+                },
+                {
+                    title: 'The Physics of Everyday Things: The Extraordinary Science Behind an Ordinary Day',
+                    author: 'James Kakalios',
+                    rating: 4,
+                },
+                {
+                    title: 'Material World: The Six Raw Materials That Shape Modern Civilization',
+                    author: 'Ed Conway',
+                    rating: 4,
+                },
+                {
+                    title: 'Invisible Women: Data Bias in a World Designed for Men',
+                    author: 'Caroline Criado Pérez',
+                    rating: 4,
+                },
+                {
+                    title: 'Sapiens: A Brief History of Humankind',
+                    author: 'Yuval Noah Harari',
+                    rating: 2,
+                },
+                {
+                    title: 'Pachinko',
+                    author: 'Min Jin Lee',
+                    rating: 5,
+                },
+                {
+                    title: 'The Anthropocene Reviewed: Essays on a Human-Centered Planet',
+                    author: 'John Green',
+                    rating: 5,
+                },
+                {
+                    title: 'The Emperor of All Maladies: A Biography of Cancer',
+                    author: 'Siddhartha Mukherjee',
+                    rating: 5,
+                },
+                {
+                    title: 'Why Brains Need Friends: The Neuroscience of Social Connection',
+                    author: 'Ben Rein',
+                    rating: 4,
+                },
+                {
+                    title: 'The Gene: An Intimate History',
+                    author: 'Siddhartha Mukherjee',
+                    rating: 5,
+                }
+            ];
+
+            const activeStar = 'https://s.gr-assets.com/images/layout/gr_red_star_active.png';
+            const inactiveStar = 'https://s.gr-assets.com/images/layout/gr_red_star_inactive.png';
+
+            // Render bookshelf.
+            const shelf = document.getElementById('goodreadsShelf');
+            books.forEach((book) => {
+                const item = document.createElement('div');
+                item.className = 'gr_custom_container';
+
+                const rating = document.createElement('div');
+                rating.className = 'gr_rating';
+                for (let i = 0; i < 5; i += 1) {
+                    const star = document.createElement('img');
+                    star.alt = i < book.rating ? 'active star' : 'inactive star';
+                    star.src = i < book.rating ? activeStar : inactiveStar;
+                    rating.appendChild(star);
+                }
+
+                const title = document.createElement('div');
+                title.className = 'gr_title';
+                const titleLink = document.createElement('div');
+                titleLink.rel = 'nofollow';
+                titleLink.textContent = book.title;
+                title.appendChild(titleLink);
+
+                const author = document.createElement('div');
+                author.className = 'gr_author';
+                const authorLink = document.createElement('div');
+                authorLink.rel = 'nofollow';
+                authorLink.textContent = book.author;
+                author.appendChild(authorLink);
+
+                item.appendChild(rating);
+                item.appendChild(title);
+                item.appendChild(author);
+                shelf.appendChild(item);
+            });
+        });
+    </script>
+</body>
+
+</html>
