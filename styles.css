@@ -131,7 +131,7 @@ body {
   flex-direction: column;
   gap: 1.75rem;
 
-  max-height: calc(100vh - 200rem);
+  max-height: calc(100vh - 20rem);
   margin: 0 auto;
 }
 
@@ -288,7 +288,7 @@ a {
   display: none;
   padding-right: 5px;
 
-  max-height: calc(100vh - 14rem);
+  max-height: calc(100vh - 10rem);
   overflow-y: auto;
 }
 
@@ -459,7 +459,7 @@ html::-webkit-scrollbar-thumb:hover {
   color: #6b7280;
   font-size: 2rem;
   align-self: center;
-  padding: 0 2.5rem 0 1rem;
+  padding: 0 1.5rem 0 1rem;
 }
 
 .detail-panel {
