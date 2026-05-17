@@ -110,7 +110,7 @@ body {
 
 .content {
   flex: 1;
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.5rem;
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -124,13 +124,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+
+  max-height: calc(100vh - 200rem);
+  margin: 0 auto;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 60% 40%;
-  gap: 2rem;
+  grid-template-columns: 60% 35%;
+  gap: 1rem;
   align-items: start;
+  margin: 0 auto;
 }
 
 .about-left {
@@ -149,6 +153,11 @@ body {
   font-size: 0.85rem;
   font-weight: 500;
   line-height: 1.5;
+
+  max-height: calc(100vh - 14rem);
+  overflow-y: scroll;
+
+  padding-right: 5px;
 }
 
 .about-left p {
@@ -265,6 +274,8 @@ a {
   display: grid;
   gap: 1.5rem;
   align-items: start;
+  
+
 }
 
 .home-layout.selected {
@@ -277,6 +288,10 @@ a {
 
 .home-detail {
   display: none;
+  padding-right: 5px;
+
+  max-height: calc(100vh - 14rem);
+  overflow-y: auto;
 }
 
 .home-layout.selected .home-detail {
@@ -284,6 +299,57 @@ a {
   max-width: 650px;
 }
 
+/* 1. Global settings for the whole page */
+html {
+  overflow-y: auto;
+  /* Firefox support: Gray thumb, Transparent track */
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 transparent;
+}
+
+/* 2. Scrollbar Width */
+html::-webkit-scrollbar {
+  width: 12px; /* Total width including the 'margin' space */
+}
+
+/* 3. The Track (Background) - Keep transparent for the floating look */
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* 4. The Thumb (The gray bar) */
+html::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0; /* The light gray from your image */
+  border-radius: 10px;
+  
+  /* The "Margin": This creates transparent space around the gray bar */
+  background-clip: padding-box;
+  border: 3px solid transparent; 
+}
+
+/* 5. Hover state */
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #cccccc;
+}
+
+/* 6. Remove everything else (Arrows, Shadows, Track-pieces) */
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-track-piece,
+*::-webkit-scrollbar-corner {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+*::-webkit-scrollbar-corner {
+    display: none !important;
+}
+
+.home-toc {
+  margin-top: 5rem;
+}
 .home-toc .selected {
   display: grid;
   gap: 1rem;
@@ -391,7 +457,6 @@ a {
   line-height: 1.95;
 }
 
-
 .toc-chevron {
   color: #6b7280;
   font-size: 2rem;
@@ -406,9 +471,11 @@ a {
   padding: 1.5rem;
   width: 100%;
   box-sizing: border-box;
-  max-height: calc(100vh - 14rem);
+  max-height: 100%;
+
+  overflow: hidden;
   overflow-y: auto;
-  scrollbar-gutter: stable both-edges;
+  padding-bottom: 20px;
 
   font-size: 0.85rem; 
   font-weight: 500;

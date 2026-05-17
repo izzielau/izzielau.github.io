@@ -58,7 +58,7 @@
 
   <script>
     const pages = {
-      page1: {
+      microsoft: {
         title: 'Applied Research on LLMs',
         subtitle: 'Microsoft AI',
         description: 'Implementing various research for the Core Search & AI Metrics team, focused on training and evaluation frameworks for fine-tuning LLMs and multimodal models.',
@@ -69,7 +69,7 @@
           `,
         thumb: "images/microsoft.png"
       },
-      page2: {
+      datathon: {
         title: 'Blueprint Datathon',
         subtitle: 'Stanford University',
         description: 'Won 1st place overall with my team through our research on trends of the COVID-19 pandemic and its impact on underrepresented communities.',
@@ -80,7 +80,7 @@
         `,
         thumb: "images/datathon.png"
       },
-      page3: {
+      recommendation: {
         title: 'Recommendation Modeling',
         subtitle: 'Spotify',
         description: 'Ingested my own data from Spotify and built a logistic regression model for naive recommendation classification.',
@@ -121,7 +121,7 @@
           `,
         thumb: "images/spotify.png"
       },
-      page4: {
+      survey: {
         title: 'A Survey of the Current Applications of NLP to Music: Recommendation Algorithms & Composition',
         subtitle: 'UC Berkeley School of Information',
         description: 'My senior thesis research project analyzing the state-of-the-art NLP techniques for music recommendation and music generation.',
@@ -184,11 +184,15 @@
       });
     };
 
-    let selectedPage = 'page1';
-    let pageKey = 'page1'
+    let selectedPage = 'microsoft';
+    let pageKey = 'microsoft'
 
     const renderPage = (pageKey) => {
       selectedPage = pageKey;
+
+      const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + pageKey;
+      window.history.pushState({path:newurl}, '', newurl);
+
       homeLayout.classList.add('selected');
       detailPage.classList.remove('hidden');
       detailTitle.textContent = pages[pageKey].title;
@@ -204,7 +208,7 @@
       });
 
       // Render Chart.js bar chart for Spotify page
-      if (pageKey === 'page3') {
+      if (pageKey === 'recommendation') {
         setTimeout(() => {
           const container = document.getElementById('spotify-chart-container');
           if (container && window.Chart) {
@@ -386,7 +390,7 @@
     });
 
     renderToc();
-    renderPage('page1');
+    renderPage('microsoft');
   </script>
 </body>
 
