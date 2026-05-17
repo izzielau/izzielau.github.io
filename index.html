@@ -184,193 +184,192 @@
       });
     };
 
-    let selectedPage = null;
+    let selectedPage = 'page1';
+    let pageKey = 'page1'
 
     const renderPage = (pageKey) => {
-      if (!pageKey || !pages[pageKey]) {
-        selectedPage = null;
-        homeLayout.classList.remove('selected');
-        detailPage.classList.add('hidden');
-        detailContent.innerHTML = '';
-        detailImage.classList.add('hidden');
-        detailImage.src = '';
-      } else {
-        selectedPage = pageKey;
-        homeLayout.classList.add('selected');
-        detailPage.classList.remove('hidden');
-        detailTitle.textContent = pages[pageKey].title;
-        detailContent.innerHTML = pages[pageKey].content;
+      selectedPage = pageKey;
+      homeLayout.classList.add('selected');
+      detailPage.classList.remove('hidden');
+      detailTitle.textContent = pages[pageKey].title;
+      detailContent.innerHTML = pages[pageKey].content;
 
-        detailImage.style.opacity = '0';
-        detailImage.style.transform = 'translateY(6px)';
-        detailImage.src = pages[pageKey].thumb;
-        detailImage.classList.remove('hidden');
-        requestAnimationFrame(() => {
-          detailImage.style.opacity = '1';
-          detailImage.style.transform = 'translateY(0)';
-        });
+      detailImage.style.opacity = '0';
+      detailImage.style.transform = 'translateY(6px)';
+      detailImage.src = pages[pageKey].thumb;
+      detailImage.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        detailImage.style.opacity = '1';
+        detailImage.style.transform = 'translateY(0)';
+      });
 
-        // Render Chart.js bar chart for Spotify page
-        if (pageKey === 'page3') {
-          setTimeout(() => {
-            const container = document.getElementById('spotify-chart-container');
-            if (container && window.Chart) {
-              // Clear container
-              container.innerHTML = '<canvas id="genreChart"></canvas>';
-              
-              const ctx = document.getElementById('genreChart').getContext('2d');
-              const genreChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                  labels: [ 'edm', 'pop edm', 'electro house', 'pop dance', 'melodic dubstep', 'future bass', 'pop', 'electropop', 'tropical house', 'electronic trap', 'dubstep', 'progressive trance', 'chillstep', 'canadian electronic', 'vapor twitch', 'progressive house', 'post-teen pop', 'dance pop', 'video game music', 'vapor soul', 'uplifting trance', 'trance', 'progressive electro house', 'k-pop girl group', 'k-pop boy group', 'k-pop', 'gaming edm', 'filthstep', 'electra', 'brostep', 'big room' ],
-                  datasets: [{
-                    label: 'Number of top artists in this genre:',
-                    data: [ 13, 11, 9, 8, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1 ],
-                    backgroundColor: '#3b82f6',
-                    borderRadius: 8,
-                    borderSkipped: false
-                  }]
+      // Render Chart.js bar chart for Spotify page
+      if (pageKey === 'page3') {
+        setTimeout(() => {
+          const container = document.getElementById('spotify-chart-container');
+          if (container && window.Chart) {
+            // Clear container
+            container.innerHTML = '<canvas id="genreChart"></canvas>';
+            
+            const ctx = document.getElementById('genreChart').getContext('2d');
+            const genreChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: [ 'edm', 'pop edm', 'electro house', 'pop dance', 'melodic dubstep', 'future bass', 'pop', 'electropop', 'tropical house', 'electronic trap', 'dubstep', 'progressive trance', 'chillstep', 'canadian electronic', 'vapor twitch', 'progressive house', 'post-teen pop', 'dance pop', 'video game music', 'vapor soul', 'uplifting trance', 'trance', 'progressive electro house', 'k-pop', 'gaming edm', 'filthstep', 'electra', 'brostep', 'big room' ],
+                datasets: [{
+                  label: 'Number of top artists in this genre:',
+                  data: [ 13, 11, 9, 8, 7, 7, 6, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+                  backgroundColor: '#3b82f6',
+                  borderRadius: 8,
+                  borderSkipped: false
+                }]
+              },
+              options: {
+                font: {
+                  family: "'DM Sans', sans-serif"
                 },
-                options: {
-                  font: {
-                    family: "'DM Sans', sans-serif"
-                  },
-                  indexAxis: 'y',
-                  responsive: true,
-                  maintainAspectRatio: true,
-                  plugins: {
-                    legend: {
-                      display: false,
-                      labels: {
-                        font: {
-                          family: "'DM Sans', sans-serif"
-                        }
-                      }
-                    }
-                  },
-                  scales: {
-                    x: {
-                      beginAtZero: true,
-                      max: 14,
-                      ticks: {
-                        font: {
-                          family: "'DM Sans', sans-serif"
-                        }
-                      }
-                    },
-                    y: {
-                      ticks: {
-                        font: { 
-                          size: 6, 
-                          family: "'DM Sans', sans-serif" }
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                  legend: {
+                    display: false,
+                    labels: {
+                      font: {
+                        family: "'DM Sans', sans-serif"
                       }
                     }
                   }
-                }
-              });
-            }
-
-            // Render correlation scatter chart
-            const corrContainer = document.getElementById('correlation-chart-container');
-            if (corrContainer && window.Chart) {
-              corrContainer.innerHTML = '<canvas id="correlationChart"></canvas>';
-              
-              const corrCtx = document.getElementById('correlationChart').getContext('2d');
-              
-              // Data points (artist ranking, popularity)
-              const dataPoints = [
-                { x: 1, y: 78 },
-                { x: 2, y: 71 },
-                { x: 3, y: 63 },
-                { x: 4, y: 79 },
-                { x: 5, y: 86 },
-                { x: 6, y: 84 },
-                { x: 7, y: 66 },
-                { x: 8, y: 85 },
-                { x: 9, y: 77 },
-                { x: 10, y: 59 },
-                { x: 11, y: 64 },
-                { x: 12, y: 55 }
-              ];
-              
-              // Calculate trend line (linear regression)
-              const n = dataPoints.length;
-              let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
-              dataPoints.forEach(p => {
-                sumX += p.x;
-                sumY += p.y;
-                sumXY += p.x * p.y;
-                sumX2 += p.x * p.x;
-              });
-              const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
-              const intercept = (sumY - slope * sumX) / n;
-              
-              const trendLine = [
-                { x: 0, y: intercept },
-                { x: 13, y: slope * 13 + intercept }
-              ];
-              
-              const correlationChart = new Chart(corrCtx, {
-                type: 'scatter',
-                data: {
-                  datasets: [
-                    {
-                      label: 'Artists',
-                      data: dataPoints,
-                      backgroundColor: '#3b82f6',
-                      borderColor: '#3b82f6',
-                      pointRadius: 6,
-                      pointHoverRadius: 8,
-                      showLine: false
-                    },
-                    {
-                      label: 'Trend Line',
-                      type: 'line',
-                      data: trendLine,
-                      borderColor: '#3b82f6',
-                      borderWidth: 3,
-                      fill: false,
-                      pointRadius: 0,
-                      tension: 0
-                    }
-                  ]
                 },
-                options: {
-                  responsive: true,
-                  maintainAspectRatio: true,
-                  plugins: {
-                    legend: {
-                      display: false
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                    max: 14,
+                    ticks: {
+                      font: {
+                        size: 10, 
+                        family: "'DM Sans', sans-serif"
+                      }
                     }
                   },
-                  scales: {
-                    x: {
-                      type: 'linear',
-                      position: 'bottom',
-                      title: {
-                        display: true,
-                        text: 'Artist Ranking',
-                        font: { size: 14 }
-                      },
-                      min: 0,
-                      max: 13
-                    },
-                    y: {
-                      title: {
-                        display: true,
-                        text: 'Popularity',
-                        font: { size: 14 }
-                      },
-                      min: 55,
-                      max: 90
+                  y: {
+                    ticks: {
+                      font: { 
+                        size: 10, 
+                        family: "'DM Sans', sans-serif" }
                     }
                   }
                 }
-              });
-            }
+              }
+            });
           }
-          );
+
+          // Render correlation scatter chart
+          const corrContainer = document.getElementById('correlation-chart-container');
+          if (corrContainer && window.Chart) {
+            corrContainer.innerHTML = '<canvas id="correlationChart"></canvas>';
+            
+            const corrCtx = document.getElementById('correlationChart').getContext('2d');
+            
+            // Data points (artist ranking, popularity)
+            const dataPoints = [
+              { x: 1, y: 78 },
+              { x: 2, y: 71 },
+              { x: 3, y: 63 },
+              { x: 4, y: 79 },
+              { x: 5, y: 86 },
+              { x: 6, y: 84 },
+              { x: 7, y: 66 },
+              { x: 8, y: 85 },
+              { x: 9, y: 77 },
+              { x: 10, y: 59 },
+              { x: 11, y: 64 },
+              { x: 12, y: 55 }
+            ];
+            
+            // Calculate trend line (linear regression)
+            const n = dataPoints.length;
+            let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+            dataPoints.forEach(p => {
+              sumX += p.x;
+              sumY += p.y;
+              sumXY += p.x * p.y;
+              sumX2 += p.x * p.x;
+            });
+            const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+            const intercept = (sumY - slope * sumX) / n;
+            
+            const trendLine = [
+              { x: 0, y: intercept },
+              { x: 13, y: slope * 13 + intercept }
+            ];
+            
+            const correlationChart = new Chart(corrCtx, {
+              type: 'scatter',
+              data: {
+                datasets: [
+                  {
+                    label: 'Artists',
+                    data: dataPoints,
+                    backgroundColor: '#3b82f6',
+                    borderColor: '#3b82f6',
+                    pointRadius: 3,
+                    pointHoverRadius: 8,
+                    showLine: false
+                  },
+                  {
+                    label: 'Trend Line',
+                    type: 'line',
+                    data: trendLine,
+                    borderColor: '#3b82f6',
+                    borderWidth: 2,
+                    fill: false,
+                    pointRadius: 0,
+                    tension: 0
+                  }
+                ]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                  legend: {
+                    display: false
+                  }
+                },
+                scales: {
+                  x: {
+                    type: 'linear',
+                    position: 'bottom',
+                    title: {
+                      display: true,
+                      text: 'Artist Ranking',
+                      font: { size: 12, family: "DM Sans"}
+                    },
+                    ticks: {
+                      font: { size: 10, family: "'DM Sans', sans-serif" }
+                    },
+                    min: 0,
+                    max: 13
+                  },
+                  y: {
+                    title: {
+                      display: true,
+                      text: 'Popularity',
+                      font: { size: 12, family: "DM Sans"}
+                    },
+                    ticks: {
+                      font: { size: 10, family: "'DM Sans', sans-serif" }
+                    },
+                    min: 55,
+                    max: 90
+                  }
+                }
+              }
+            });
+          }
         }
+        );
       }
 
       Array.from(tocList.querySelectorAll('.toc-item')).forEach((button) => {
@@ -387,7 +386,7 @@
     });
 
     renderToc();
-    renderPage(null);
+    renderPage('page1');
   </script>
 </body>
 
