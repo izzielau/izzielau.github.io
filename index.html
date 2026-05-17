@@ -1,1 +1,394 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/izzie@2x.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="Izzie Lau" content="Personal website"/><meta name="og:image" content="https://drive.google.com/file/d/1zqZQA60o5k3ImNGU_P74PlbQZ9d4CA2F/view?usp=sharing"><link rel="apple-touch-icon" href="/izzie@2x.png"/><link rel="manifest" href="/manifest.json"/><title>Izzie Lau</title><link href="/static/css/main.9d72e2b5.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function r(r){for(var n,i,l=r[0],a=r[1],f=r[2],c=0,s=[];c<l.length;c++)i=l[c],Object.prototype.hasOwnProperty.call(o,i)&&o[i]&&s.push(o[i][0]),o[i]=0;for(n in a)Object.prototype.hasOwnProperty.call(a,n)&&(e[n]=a[n]);for(p&&p(r);s.length;)s.shift()();return u.push.apply(u,f||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,l=1;l<t.length;l++){var a=t[l];0!==o[a]&&(n=!1)}n&&(u.splice(r--,1),e=i(i.s=t[0]))}return e}var n={},o={1:0},u=[];function i(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=e,i.c=n,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,r){if(1&r&&(e=i(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)i.d(t,n,function(r){return e[r]}.bind(null,n));return t},i.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(r,"a",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p="/";var l=this.webpackJsonpizzielau=this.webpackJsonpizzielau||[],a=l.push.bind(l);l.push=r,l=l.slice();for(var f=0;f<l.length;f++)r(l[f]);var p=a;t()}([])</script><script src="/static/js/2.d513c2a5.chunk.js"></script><script src="/static/js/main.866c548e.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Izzie Lau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand-group">
+          <div class="brand">IZZIE LAU</div>
+          <div class="social-links">
+            <a class="social-button" href="https://linkedin.com/in/izzielau" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn">🔗</a>
+            <a class="social-button" href="https://github.com/izzielau" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub">🐙</a>
+          </div>
+        </div>
+        <nav class="site-nav">
+          <a class="nav-button active" href="index.html">Home</a>
+          <a class="nav-button" href="about.html">About Me</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="home-layout" id="homeLayout">
+        <aside class="home-toc">
+          <div>
+            <h2>Hey there, I'm Izzie!</h2>
+            <p class="toc-instructions">Check out some of my recent work and personal projects.</p>
+          </div>
+
+          <div class="toc-list" id="tocList"></div>
+        </aside>
+
+        <div class="home-detail">
+          <div class="detail-panel">
+            <div id="homeDefault">
+            </div>
+            <div id="detailPage" class="hidden">
+              <h3 id="detailTitle"></h3>
+              <img id="detailImage" class="detail-thumb hidden" alt="preview image" />
+              <div id="detailContent"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const pages = {
+      page1: {
+        title: 'Applied Research on LLMs',
+        subtitle: 'Microsoft AI',
+        description: 'Implementing various research for the Core Search & AI Metrics team, focused on training and evaluation frameworks for fine-tuning LLMs and multimodal models.',
+        content: `
+          <p>I'm an applied research scientist on the Core Search & AI Metrics team, which is constantly implementing state-of-the-art ML models to manufacture and monitor the high-quality metrics that power Bing.</p>
+          <p>Some techniques I've worked with include supervised fine-tuning (SFT), reinforcement learning with human feedback (RL-HF), Latent Dirichlet Allocation (LDA), mixture of experts (MoE) training, and logistic regression for binary and multi-class classification. I'm familiar with many data science tools including Azure Machine Learning, PyTorch, visualization libraries and have years of experience with semi-supervised learning and active learning pipelines.</p>
+          <p>In my internship, I worked with implementing and evaluating a small-scale self-training pipeline previously explored by a team in Microsoft Research: <a href="https://www.microsoft.com/en-us/research/publication/self-training-weak-supervision-astra/" target="_blank" rel="noreferrer">Self-Training with Weak Supervision</a></p>
+          `,
+        thumb: "images/microsoft.png"
+      },
+      page2: {
+        title: 'Blueprint Datathon',
+        subtitle: 'Stanford University',
+        description: 'Won 1st place overall with my team through our research on trends of the COVID-19 pandemic and its impact on underrepresented communities.',
+        content: `
+          <p>It was a very spontaneous decision to join some of my friends in this three-day datathon. It was my first time even hearing the term "datathon" (data marathon?), but with my three other incredibly sweet and talented teammates, it quickly became one of my favorite experiences during COVID. I remember being aware of the sunrise slowly illuminating my pitch-black living room during our last all-nighter, my teammates and I typing furiously to create seaborn plots and do last-second model tuning.</p>
+          <p>We ended up getting the first place award for our research paper, which demonstrated trends of Covid-19 disparities across language, race, education level, economic status, and disability status. This was truly an eye-opening experience for me in terms of the academic conclusions we came to, the technical skills I learned from my peers, and the memories our team made in such a short amount of time.</p>
+          <p>Our paper is published on the hackathon website: <a href="https://devpost.com/software/covid-19-health-disparities/" target="_blank" rel="noreferrer">Covid-19 Health Disparities</a></p>
+        `,
+        thumb: "images/datathon.png"
+      },
+      page3: {
+        title: 'Recommendation Modeling',
+        subtitle: 'Spotify',
+        description: 'Ingested my own data from Spotify and built a logistic regression model for naive recommendation classification.',
+        content: `
+          <h4>Exploration</h4>
+          <p>I first explored which genres I listened to the most by aggregating each genres' appearance in the list of genres corresponding to my top 20 artists.</p>
+          <div id="spotify-chart-container" class="chart-container"></div>
+          <p>I noticed that the API returns a feature called "popularity" for each artist, and have always been a little curious about whether the music I listen to is mainstream. To find out, I graphed the correlation between artist ranking and popularity:</p>
+          <div id="correlation-chart-container" class="chart-container"></div>
+          <p>With an r-value of approxiamtely -0.45, there is a moderate correlation. A negative r-value of this magnitude could imply that my more popular artists have higher popularity scores-- a.k.a. a negative correlation between personal preference and artist popularity.</p>
+          <p></p>
+          <h4>Recommendation Model</h4>
+          <p>I personally have had a variety of hit-and-misses with Spotify's recommendations algorithm. When I saw that the API could return certain features of song tracks, I wanted to see if I could build myself a personalized recommendations algorithm using these features and the information that I know about my personal preferences.</p>
+          <p>The features for each track returned by the API include:</p>
+          <ul>
+            <li>acousticness</li>
+            <li>danceability</li>
+            <li>energy</li>
+            <li>instrumentalness</li>
+            <li>key</li>
+            <li>liveness</li>
+            <li>loudness</li>
+            <li>speechiness</li>
+            <li>tempo</li>
+            <li>time signature</li>
+            <li>valence</li>
+          </ul>
+          <p>Using the Spotify API, I randomly sampled 552 songs from my own playlists and my friends' playlists and personally annotated the data by classifying each song as either 0 (dislike) or 1 (like). I cleaned the data and prepared it for training, including changes such as:</p>
+          <ul>
+            <li>one-hot-encoding the key of the song</li>
+            <li>filling null values</li>
+            <li>removing time signature as a feature after realizing most values were missing or redundant (i.e. all 4's) or incorrect (i.e. 0)</li>
+          </ul>
+          <p>I then trained a logistic regression model on the cleaned data to predict the likelihood of a song being liked based on its features. Using a 9:1 data split for training and validation, the model reached: </p>
+          <p><b>Training accuracy:</b> 0.7847<br><b>Validation accuracy:</b> 0.7143</p>
+          <p>I also wanted to test how well the model responds to new data, so I created a completely new playlist of 40 songs I've never listened to before as a test set. After I listened to the songs and manually labeled them as gold labels, I then calculated the model's accuracy on the test dataset to be 65%.</p>
+          <p>This was not a statistically significant result (p=0.04), but the API was fun to implement and showed some promising results! Some ideas I have moving forward in the next iteration of this model are to add new features and incorporate external APIs to add augmented information. There is so much to improve!</p>
+          `,
+        thumb: "images/spotify.png"
+      },
+      page4: {
+        title: 'A Survey of the Current Applications of NLP to Music: Recommendation Algorithms & Composition',
+        subtitle: 'UC Berkeley School of Information',
+        description: 'My senior thesis research project analyzing the state-of-the-art NLP techniques for music recommendation and music generation.',
+        content: `
+          <p>As the final project for UC Berkeley's Info 159 course in natural language processing, students were asked to write a research survey on a subfield of NLP. I decided to focus on music recommendation algorithms and music composition models.</p>
+          <p>My paper can be read on Academia here at this link: <a href="https://www.academia.edu/84397392/A_Survey_of_the_Current_Applications_of_NLP_to_Music_Recommendation_Algorithms_and_Composition" target="_blank" rel="noopener noreferrer">A Survey of the Current Applications of NLP to Music: Recommendation Algorithms & Composition</a></p>
+        `,
+        thumb: "images/music.png"
+      }
+    };
+
+    const homeLayout = document.getElementById('homeLayout');
+    const tocList = document.getElementById('tocList');
+    const homeDefault = document.getElementById('homeDefault');
+    const detailPage = document.getElementById('detailPage');
+    const detailTitle = document.getElementById('detailTitle');
+    const detailContent = document.getElementById('detailContent');
+    const detailImage = document.getElementById('detailImage');
+
+    const renderToc = () => {
+      tocList.innerHTML = '';
+      Object.keys(pages).forEach((pageKey) => {
+        const page = pages[pageKey];
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'toc-item';
+        button.dataset.page = pageKey;
+
+        const thumb = document.createElement('img');
+        thumb.className = 'thumb';
+        thumb.alt = page.title + ' thumbnail';
+        thumb.src = page.thumb;
+
+        const copy = document.createElement('div');
+        copy.className = 'item-copy';
+
+        const label = document.createElement('div');
+        label.className = "table-label";
+        label.textContent = page.title;
+        copy.appendChild(label);
+
+        const subtitle = document.createElement('div');
+        subtitle.className = 'subtitle';
+        subtitle.textContent = page.subtitle;
+        copy.appendChild(subtitle);
+
+        const desc = document.createElement('div');
+        desc.className = 'description';
+        desc.textContent = page.description;
+        copy.appendChild(desc);
+
+        const chevron = document.createElement('span');
+        chevron.className = 'toc-chevron';
+        chevron.textContent = '›';
+
+        button.appendChild(thumb);
+        button.appendChild(copy);
+        button.appendChild(chevron);
+        tocList.appendChild(button);
+      });
+    };
+
+    let selectedPage = null;
+
+    const renderPage = (pageKey) => {
+      if (!pageKey || !pages[pageKey]) {
+        selectedPage = null;
+        homeLayout.classList.remove('selected');
+        detailPage.classList.add('hidden');
+        detailContent.innerHTML = '';
+        detailImage.classList.add('hidden');
+        detailImage.src = '';
+      } else {
+        selectedPage = pageKey;
+        homeLayout.classList.add('selected');
+        detailPage.classList.remove('hidden');
+        detailTitle.textContent = pages[pageKey].title;
+        detailContent.innerHTML = pages[pageKey].content;
+
+        detailImage.style.opacity = '0';
+        detailImage.style.transform = 'translateY(6px)';
+        detailImage.src = pages[pageKey].thumb;
+        detailImage.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          detailImage.style.opacity = '1';
+          detailImage.style.transform = 'translateY(0)';
+        });
+
+        // Render Chart.js bar chart for Spotify page
+        if (pageKey === 'page3') {
+          setTimeout(() => {
+            const container = document.getElementById('spotify-chart-container');
+            if (container && window.Chart) {
+              // Clear container
+              container.innerHTML = '<canvas id="genreChart"></canvas>';
+              
+              const ctx = document.getElementById('genreChart').getContext('2d');
+              const genreChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: [ 'edm', 'pop edm', 'electro house', 'pop dance', 'melodic dubstep', 'future bass', 'pop', 'electropop', 'tropical house', 'electronic trap', 'dubstep', 'progressive trance', 'chillstep', 'canadian electronic', 'vapor twitch', 'progressive house', 'post-teen pop', 'dance pop', 'video game music', 'vapor soul', 'uplifting trance', 'trance', 'progressive electro house', 'k-pop girl group', 'k-pop boy group', 'k-pop', 'gaming edm', 'filthstep', 'electra', 'brostep', 'big room' ],
+                  datasets: [{
+                    label: 'Number of top artists in this genre:',
+                    data: [ 13, 11, 9, 8, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1 ],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 8,
+                    borderSkipped: false
+                  }]
+                },
+                options: {
+                  font: {
+                    family: "'DM Sans', sans-serif"
+                  },
+                  indexAxis: 'y',
+                  responsive: true,
+                  maintainAspectRatio: true,
+                  plugins: {
+                    legend: {
+                      display: false,
+                      labels: {
+                        font: {
+                          family: "'DM Sans', sans-serif"
+                        }
+                      }
+                    }
+                  },
+                  scales: {
+                    x: {
+                      beginAtZero: true,
+                      max: 14,
+                      ticks: {
+                        font: {
+                          family: "'DM Sans', sans-serif"
+                        }
+                      }
+                    },
+                    y: {
+                      ticks: {
+                        font: { 
+                          size: 6, 
+                          family: "'DM Sans', sans-serif" }
+                      }
+                    }
+                  }
+                }
+              });
+            }
+
+            // Render correlation scatter chart
+            const corrContainer = document.getElementById('correlation-chart-container');
+            if (corrContainer && window.Chart) {
+              corrContainer.innerHTML = '<canvas id="correlationChart"></canvas>';
+              
+              const corrCtx = document.getElementById('correlationChart').getContext('2d');
+              
+              // Data points (artist ranking, popularity)
+              const dataPoints = [
+                { x: 1, y: 78 },
+                { x: 2, y: 71 },
+                { x: 3, y: 63 },
+                { x: 4, y: 79 },
+                { x: 5, y: 86 },
+                { x: 6, y: 84 },
+                { x: 7, y: 66 },
+                { x: 8, y: 85 },
+                { x: 9, y: 77 },
+                { x: 10, y: 59 },
+                { x: 11, y: 64 },
+                { x: 12, y: 55 }
+              ];
+              
+              // Calculate trend line (linear regression)
+              const n = dataPoints.length;
+              let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+              dataPoints.forEach(p => {
+                sumX += p.x;
+                sumY += p.y;
+                sumXY += p.x * p.y;
+                sumX2 += p.x * p.x;
+              });
+              const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+              const intercept = (sumY - slope * sumX) / n;
+              
+              const trendLine = [
+                { x: 0, y: intercept },
+                { x: 13, y: slope * 13 + intercept }
+              ];
+              
+              const correlationChart = new Chart(corrCtx, {
+                type: 'scatter',
+                data: {
+                  datasets: [
+                    {
+                      label: 'Artists',
+                      data: dataPoints,
+                      backgroundColor: '#3b82f6',
+                      borderColor: '#3b82f6',
+                      pointRadius: 6,
+                      pointHoverRadius: 8,
+                      showLine: false
+                    },
+                    {
+                      label: 'Trend Line',
+                      type: 'line',
+                      data: trendLine,
+                      borderColor: '#3b82f6',
+                      borderWidth: 3,
+                      fill: false,
+                      pointRadius: 0,
+                      tension: 0
+                    }
+                  ]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: true,
+                  plugins: {
+                    legend: {
+                      display: false
+                    }
+                  },
+                  scales: {
+                    x: {
+                      type: 'linear',
+                      position: 'bottom',
+                      title: {
+                        display: true,
+                        text: 'Artist Ranking',
+                        font: { size: 14 }
+                      },
+                      min: 0,
+                      max: 13
+                    },
+                    y: {
+                      title: {
+                        display: true,
+                        text: 'Popularity',
+                        font: { size: 14 }
+                      },
+                      min: 55,
+                      max: 90
+                    }
+                  }
+                }
+              });
+            }
+          }
+          );
+        }
+      }
+
+      Array.from(tocList.querySelectorAll('.toc-item')).forEach((button) => {
+        const isActive = button.dataset.page === selectedPage;
+        button.classList.toggle('active', isActive);
+      });
+    };
+
+    tocList.addEventListener('click', (event) => {
+      const button = event.target.closest('.toc-item');
+      if (!button) return;
+      const pageKey = button.dataset.page;
+      renderPage(selectedPage === pageKey ? null : pageKey);
+    });
+
+    renderToc();
+    renderPage(null);
+  </script>
+</body>
+
+</html>
