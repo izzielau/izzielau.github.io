@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="yelp.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -20,8 +21,10 @@
         <div class="brand-group">
           <div class="brand">IZZIE LAU</div>
           <div class="social-links">
-            <a class="social-button" href="https://linkedin.com/in/izzielau" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn">🔗</a>
-            <a class="social-button" href="https://github.com/izzielau" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub">🐙</a>
+            <a class="social-button" href="https://linkedin.com/in/izzielau" target="_blank" rel="noreferrer"
+              title="LinkedIn" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn icon" style="width: 1em; height: 1em;" /></a>
+            <a class="social-button" href="https://github.com/izzielau" target="_blank" rel="noreferrer" title="GitHub"
+              aria-label="GitHub">🐙</a>
           </div>
         </div>
         <nav class="site-nav">
@@ -35,8 +38,8 @@
       <section class="home-layout" id="homeLayout">
         <aside class="home-toc">
           <div>
-            <h2>Hey there, I'm Izzie!</h2>
-            <p class="toc-instructions">Check out some of my recent work and personal projects.</p>
+            <h2>Hey there, I'm <span class="name">Izzie</span>!</h2>
+            <p class="toc-instructions">Check out some of my personal projects.</p>
           </div>
 
           <div class="toc-list" id="tocList"></div>
@@ -71,6 +74,47 @@
           `,
         thumb: "images/microsoft.png"
       },
+      yelp: {
+        title: 'LLM + RAG Prediction Classifier for Yelp Reviews',
+        subtitle: 'Personal Project',
+        description: 'Downloaded my personal data from Yelp and built a prediction classifier for business reviews using a hybrid large language model (LLM) + retrieval-augmented generation (RAG) pipeline.',
+        content: `
+          <p>Modern discovery platforms such as Yelp, Beli, and TripAdvisor provide us with a general consensus of what the general crowd might rate a business, but completely ignore an individual’s preferences and dietary quirks. What one might consider a delicious meal might completely differ from another-- and this nuance is lost in the mass of data.</p>
+          <p>I admittedly spend much time scouring through Yelp reviews before I choose to eat (and what to eat!), so the ideation of this personal project came quite naturally to me. This personal project aims to bridge the gap between the overwhelming crowd-sourced ratings and my individual unique palate, by way of a <b>personalized business recommendation classifier</b> implemented through a hybrid large language model (<b>LLM</b>) + retrieval-augmented generation (<b>RAG</b>) pipeline. </p>
+          <h4>Exploration</h4>
+          <p>First, I wanted to get a better understanding of my own rating distributions and personal preferences. Just like the majority of users on Yelp, I tend to rate businesses with a strong skew towards the higher end of the rating scale.</p>
+          <div id="yelp-star-container" class="chart-container"></div>
+          <p>I also quite enjoyed getting to see what types of cuisine I frequently eat! Not surprisingly, Coffee & Tea businesses topped the list (the midnight fuel of us coders).</p>
+          <div id="yelp-category-container" class="chart-container"></div>
+          <p>I used this exploratory data analysis to provide a baseline profile of myself for the LLM classifier.</p>
+          <h4>Recommendation Model</h4>
+          <p>The classifier consists of a two-stage retrieval‑augmented pipeline in which <b>GPT‑4o mini</b> is prompted to output a discrete rating prediction (1–5) approximating a user's Yelp score rating.</p>
+          <img src="images/rag.png" style="width: 100%;" alt="two-stage large language model + retrieval augmented generation pipeline">
+          <p style="margin-top: 0; margin-right: 10px; font-size: 0.5rem; width=100%; text-align: right;"><a style="color: #AAA;" href="https://neurons-lab.com/article/intro-to-llm-agents-with-langchain-when-rag-is-not-enough/" target="_blank" rel="noreferrer"><i>Intro to LLM Agents with LangChain: When RAG is Not Enough</i></a></p>
+          <p>Prior to inferencing, the prompt is augmented with personalized contextual evidence retrieved via a <b>BM25‑based lexical retriever</b> operating over a corpus of 300 of my personally‑authored reviews. The retriever returns the top‑<i>k</i> reviews that are semantically-similar to the business being rated. These are then reformatted and concatenated into the prompt to guide the model’s rating towards my own personal preferences.</p>
+          <p>I used the <b>Yelp API</b> to download the attributes for each of the businesses I’ve rated in the past. The retrieval model is built on top of the basic business attributes (name, rating, reviews, categories).</p>
+          <div id="yelp-schema"></div>
+          <h4>Evaluation</h4>
+          <p>I validated the prediction system against a holdout dataset of 50 of my personal reviews, evaluating its capability to accurately predict and replicate the true rating (which has been obscured). I formatted the validation data into a basic prompt and used <b>GPT‑4o mini</b> to generate the recommendation score for each business.</p>
+          <div id="llm-prompt"></div>
+          <p>Interestingly, the LLM + profile model had the worst pairwise accuracy (<b>0.700</b>). This suggests that without the additional context from the RAG system, the model struggles to accurately capture my personal preference and imposes its internal biases instead.</p>
+          <div id="metrics-table-wrap"></div>
+          <p>I was also quite entertained by the fact that the baseline performance (crowd-sourcing the average rating from the business itself) had such high one-off accuracy. It seems that though I initially started this project inspired to set apart my ratings from the norm, the norm is actually a pretty good indicator after all.</p>
+          <p>The LLM + profile + RAG model had the best performance across both metrics (<b>0.360</b> and <b>0.860</b>). I was pleasantly surprised by the significant boost in accuracy from the addition of the retrieved reviews. The retrieval model is quite naive in its implementation and there is much room for improvement, so this preliminary result is promising for the potential of future experiments.</p>
+          <h4>Future Direction</h4>
+          <p>These results inspired me to think about the biases and challenges of rating tasks as a whole: the subjectivity and noisiness of human labels and the inherent cultural and individual biases of a "5-star" rating scale. For example, through <b>error analysis</b>, I realized that most strong mispredictions of my low-star reviews were heavily influenced by rare factors (i.e. bad service, food poisoning) that were practically impossible for the model to predict based on the information provided.
+          <p>
+          <p> Some basic ideas I'll expand on for this project with more time are:</p>
+          <ul>
+              <li> <b>Hybrid retrieval:</b> Implementing sentence transformers or dense vector embeddings could capture deeper semantic relationships, allowing for improvement in the personalized context.</li>
+              <li> <b>Prompt engineering:</b> The prompt above is the unedited first draft and can be further improved.</li>
+              <li> <b>Model tuning:</b> Experimenting with different models and tuning hyperparameters has potential to improve performance.</li>
+              <li> <b>Data quality improvement:</b> The Yelp API is quite limited in what it provides to basic tier users (i.e. there is no <i>cheap</i> way to substantially download more than 3 reviews from each business). With more time, I would do some more investigation to see what extra features and data can be exposed from the official API or external APIs. </li>
+          </ul>
+          <p>This was such a fun project to dip my toes into an up-and-coming area of LLM applications. I'm quite excited to continue expanding on this project moving forward. :)
+          `,
+        thumb: "images/yelp.png"
+      },
       datathon: {
         title: 'Blueprint Datathon',
         subtitle: 'Stanford University',
@@ -83,8 +127,8 @@
         thumb: "images/datathon.png"
       },
       recommendation: {
-        title: 'Recommendation Modeling',
-        subtitle: 'Spotify',
+        title: 'Recommendation Modeling for Spotify Playlists',
+        subtitle: 'Personal Project',
         description: 'Ingested my own data from Spotify and built a logistic regression model for naive recommendation classification.',
         content: `
           <h4>Exploration</h4>
@@ -92,7 +136,7 @@
           <div id="spotify-chart-container" class="chart-container"></div>
           <p>I noticed that the API returns a feature called "popularity" for each artist, and have always been a little curious about whether the music I listen to is mainstream. To find out, I graphed the correlation between artist ranking and popularity:</p>
           <div id="correlation-chart-container" class="chart-container"></div>
-          <p>With an r-value of approxiamtely -0.45, there is a moderate correlation. A negative r-value of this magnitude could imply that my more popular artists have higher popularity scores-- a.k.a. a negative correlation between personal preference and artist popularity.</p>
+          <p>With an r-value of approximately -0.45, there is a moderate correlation. A negative r-value of this magnitude could imply that my more popular artists have higher popularity scores-- a.k.a. a negative correlation between personal preference and artist popularity.</p>
           <p></p>
           <h4>Recommendation Model</h4>
           <p>I personally have had a variety of hit-and-misses with Spotify's recommendations algorithm. When I saw that the API could return certain features of song tracks, I wanted to see if I could build myself a personalized recommendations algorithm using these features and the information that I know about my personal preferences.</p>
@@ -193,106 +237,238 @@
       selectedPage = pageKey;
 
       const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + pageKey;
-      window.history.pushState({path:newurl}, '', newurl);
+      window.history.pushState({ path: newurl }, '', newurl);
 
       homeLayout.classList.add('selected');
       detailPage.classList.remove('hidden');
       detailTitle.textContent = pages[pageKey].title;
       detailContent.innerHTML = pages[pageKey].content;
 
-      detailImage.style.opacity = '0';
-      detailImage.style.transform = 'translateY(6px)';
+      detailImage.style.opacity = '1';
       detailImage.src = pages[pageKey].thumb;
       detailImage.classList.remove('hidden');
-      requestAnimationFrame(() => {
-        detailImage.style.opacity = '1';
-        detailImage.style.transform = 'translateY(0)';
-      });
 
-      // Render Chart.js bar chart for Spotify page
+      // Reusable components.
+      // Default size 10 unless otherwise specified for ticks.
+      const getFontConfig = (type, size) => {
+        if (type == "font") {
+          return { font: { size: size || 10, family: "'DM Sans', sans-serif" } };
+        }
+        if (type == "ticks") {
+          return { ticks: { font: { size: size || 10, family: "'DM Sans', sans-serif" } } };
+        }
+        return {
+          family: "'DM Sans', sans-serif"
+        };
+      }
+      // For rendering interactive horizontal bar charts.
+      const renderChart = (containerName, data) => {
+        const container = document.getElementById(containerName);
+        if (container && window.Chart) {
+          container.innerHTML = '<canvas id="' + containerName + '-chart"></canvas>';
+
+          const ctx = document.getElementById(containerName + '-chart').getContext('2d');
+          const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: data.datasetLabel,
+                data: data.datasetValues,
+                backgroundColor: '#3b82f6',
+                borderRadius: 8,
+                borderSkipped: false
+              }]
+            },
+            options: {
+              font: getFontConfig(),
+              indexAxis: 'y',
+              responsive: true,
+              maintainAspectRatio: true,
+              plugins: {
+                legend: {
+                  display: false,
+                  labels: getFontConfig("font"),
+                }
+              },
+              scales: {
+                x: getFontConfig("ticks"),
+                y: getFontConfig("ticks"),
+              }
+            }
+          });
+        }
+      }
+
+      if (pageKey === 'yelp') {
+        setTimeout(() => {
+          renderChart('yelp-star-container', {
+            labels: ['5-star', '4-star', '3-star', '2-star', '1-star'],
+            datasetLabel: 'Number of ratings per star',
+            datasetValues: [134, 100, 34, 5, 6]
+          });
+
+          renderChart('yelp-category-container', {
+            labels: ["Coffee & Tea", "Cocktail Bars", "Chinese", "Seafood", "Noodles", "Sushi Bars", "Japanese", "Breakfast & Brunch", "Desserts", "Korean", "Bubble Tea", "Cafes", "Wine Bars", "Sandwiches", "Asian Fusion", "Ramen", "Hot Pot", "Pizza", "Bakeries", "Italian"],
+            datasetLabel: 'Number of businesses in this category',
+            datasetValues: [29, 26, 23, 20, 19, 17, 17, 17, 16, 15, 15, 15, 12, 11, 11, 10, 10, 9, 9]
+          });
+
+          // Data schema table.
+          const schemaContainer = document.getElementById('yelp-schema');
+          if (schemaContainer) {
+            const schema = [
+              { field: "business_id", type: "string", desc: "Unique identifier per business", example: "4TF8ftBvRoI6QX3IiNOk3g" },
+              { field: "business_name", type: "string", desc: "Friendly display name", example: "Hot Pot and Grill" },
+              { field: "city", type: "string", desc: "City where the business is located", example: "San Francisco" },
+              { field: "state", type: "string", desc: "State where the business is located", example: "California" },
+              { field: "business_rating", type: "float", desc: "Average rating of the business", example: "4.1" },
+              { field: "business_reviews", type: "string", desc: "Raw JSON string of recent customer reviews", example: "[{'id': '...', 'text': '...', 'rating': 5.0}]" },
+              { field: "review_count", type: "int", desc: "Total number of reviews for the business", example: "223" },
+              { field: "categories", type: "string", desc: "Comma-separated list of business categories", example: "Hot Pot, Barbeque, Asian Fusion" },
+              { field: "my_rating", type: "float", desc: "User's personal rating of the business", example: "5.0" },
+              { field: "my_review", type: "string", desc: "User's personal review text", example: "Came here for the restaurant week hotpot combo..." },
+            ];
+            
+            const typeClass = {
+              "string": "type-str",
+              "int": "type-int",
+              "float": "type-float",
+              "bool": "type-bool",
+              "list[str]": "type-list",
+            };
+
+            schemaContainer.innerHTML = `<div class="schema-wrap"> <table class="schema"> <thead> <tr> <th>Field</th> <th>Type</th> <th>Example</th> </tr> </thead> <tbody id="schema-tbody"></tbody> </table> </div>`;
+
+            const tbody = schemaContainer.querySelector('#schema-tbody');
+            schema.forEach(({ field, type, desc, example }) => {
+              const tr = document.createElement("tr");
+              tr.innerHTML = `<td><span class="field-name">${field}</span></td><td><span class="type-badge ${typeClass[type]}">${type}</span></td><td class="example-cell">${desc}<br><span class="example-val">${example}</span></td>`;
+              tbody.appendChild(tr);
+            });
+
+            // Prompt.
+            const promptContainer = document.getElementById('llm-prompt');
+            if (promptContainer) {
+              const lines = [
+                { text: "You are a personalized restaurant‑rating model. Your task is to predict how much I would like a restaurant on a 1–5 scale, based strictly on my personal taste profile and my historical ratings of similar restaurants." },
+                { text: "" },
+                { text: "### MY PROFILE", section: true },
+                { text: "The historical distribution of my ratings are as follows:" },
+                { text: "5 = 48%  |  4 = 36%  |  3 = 12%  |  2 = 2%  |  1 = 2%" },
+                { text: "" },
+                { text: "My top 20 categories: Coffee & Tea | Cocktail Bars | Chinese | Seafood | Noodles | Sushi Bars | Breakfast & Brunch | Japanese | Desserts | Korean | Bubble Tea | Wine Bars | Cafes | Sandwiches | Asian Fusion | Ramen | Pizza | Hot Pot | Bakeries | Italian" },
+                { text: "" },
+                { text: "Some reviews I've written for restaurants in the same category as YOUR TASK are:" },
+                { text: "{retrieved_reviews}", var: true },
+                { text: "" },
+                { text: "### BUSINESS INFO", section: true },
+                { text: "{business_name}", var: true },
+                { text: "Categories: {categories}", vars: ["{categories}"] },
+                { text: "{review_count} reviews have been written for this business with an average rating of {business_rating}.", vars: ["{review_count}", "{business_rating}"] },
+                { text: "Some reviews written for the business you are rating are:" },
+                { text: "{business_reviews_cleaned}", var: true },
+                { text: "" },
+                { text: "### RULES", section: true },
+                { text: "The rating must reflect my taste, not general Yelp sentiment. If any information is missing, infer cautiously and state assumptions. Adhere strictly to the provided output format." },
+                { text: "" },
+                { text: "### YOUR TASK", section: true },
+                { text: "Restaurant: {business_name} ({categories})", vars: ["{business_name}", "{categories}"] },
+                { text: "Average rating: {business_rating}", vars: ["{business_rating}"] },
+                { text: "Location: {city}, {state}", vars: ["{city}", "{state}"] },
+                { text: "" },
+                { text: "### OUTPUT FORMAT:", section: true },
+                { text: "Rating: ..." },
+                { text: "" },
+                { text: "### YOUR PREDICTION:", section: true },
+                { text: "Rating:" },
+              ];
+
+              function renderLine(line) {
+                if (line.section) return `<span class="section-head">${line.text}</span>`;
+                if (line.var)     return `<span class="var-tag">${line.text}</span>`;
+                if (line.vars) {
+                  let t = line.text;
+                  line.vars.forEach(v => { t = t.replace(v, `<span class="var-tag">${v}</span>`); });
+                  return t;
+                }
+                return line.text === "" ? " " : line.text;
+              }
+
+              promptContainer.innerHTML = ` <div class="prompt-header" id="prompt-toggle-btn" style="display:flex; align-items:center; gap:10px; margin-bottom:0.75rem; cursor:pointer;"> <span id="toggle-label" style="font-size:11px; color:#888; margin-left:auto;">▼ expand</span> </div> <pre class="prompt-box" id="prompt-box">${lines.map(renderLine).join("\n")}</pre> `;
+
+              const btn = document.getElementById("prompt-toggle-btn");
+              const box = document.getElementById("prompt-box");
+              box.style.maxHeight = "100px";
+              box.style.overflow = "hidden";
+              box.style.WebkitMaskImage = "linear-gradient(to bottom, black 40%, transparent 100%)";
+              box.style.maskImage = "linear-gradient(to bottom, black 40%, transparent 100%)";
+              document.getElementById("toggle-label").textContent = "↓ expand";
+
+              let open = false;
+              btn.addEventListener("click", () => {
+                open = !open;
+                if (open) {
+                  box.style.maxHeight = box.scrollHeight + "px";
+                  box.style.WebkitMaskImage = "none";
+                  box.style.maskImage = "none";
+                  document.getElementById("toggle-label").textContent = "↑ collapse";
+                } else {
+                  box.style.maxHeight = "100px";
+                  box.style.WebkitMaskImage = "linear-gradient(to bottom, black 40%, transparent 100%)";
+                  box.style.maskImage = "linear-gradient(to bottom, black 40%, transparent 100%)";
+                  document.getElementById("toggle-label").textContent = "↓ expand";
+                }
+              });
+            }
+
+            // Create table for evaluation metrics.
+            const metricsTable = document.getElementById("metrics-table-wrap");
+            if (metricsTable) {
+              const columns = ["Baseline (crowd-sourced)", "LLM + profile", "LLM + profile + RAG"];
+              const rows = [
+                { metric: "Pointwise accuracy", values: [0.300, 0.340, 0.360] },
+                { metric: "One-off accuracy",   values: [0.840, 0.700, 0.860] },
+              ];
+
+              metricsTable.innerHTML = `<div class="metrics-wrap"><table class="metrics" id="metrics-tbl"></table></div>`;
+
+              const table = metricsTable.querySelector("#metrics-tbl");
+              const thead = document.createElement("thead");
+              thead.innerHTML = `<tr><th></th>${columns.map(c => `<th>${c}</th>`).join("")}</tr>`;
+              table.appendChild(thead);
+
+              const tbody = document.createElement("tbody");
+              rows.forEach(({ metric, values }) => {
+                const max = Math.max(...values);
+                const tr = document.createElement("tr");
+                tr.innerHTML = `<td>${metric}</td>
+                  ${values.map(v => `<td>${v === max ? `<span class="best">${v.toFixed(3)}</span>` : v.toFixed(3)}</td>`).join("")}`;
+                tbody.appendChild(tr);
+              });
+              table.appendChild(tbody);
+            }
+          }
+        });
+      }
+
       if (pageKey === 'recommendation') {
         setTimeout(() => {
-          const container = document.getElementById('spotify-chart-container');
-          if (container && window.Chart) {
-            // Clear container
-            container.innerHTML = '<canvas id="genreChart"></canvas>';
-            
-            const ctx = document.getElementById('genreChart').getContext('2d');
-            const genreChart = new Chart(ctx, {
-              type: 'bar',
-              data: {
-                labels: [ 'edm', 'pop edm', 'electro house', 'pop dance', 'melodic dubstep', 'future bass', 'pop', 'electropop', 'tropical house', 'electronic trap', 'dubstep', 'progressive trance', 'chillstep', 'canadian electronic', 'vapor twitch', 'progressive house', 'post-teen pop', 'dance pop', 'video game music', 'vapor soul', 'uplifting trance', 'trance', 'progressive electro house', 'k-pop', 'gaming edm', 'filthstep', 'electra', 'brostep', 'big room' ],
-                datasets: [{
-                  label: 'Number of top artists in this genre:',
-                  data: [ 13, 11, 9, 8, 7, 7, 6, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
-                  backgroundColor: '#3b82f6',
-                  borderRadius: 8,
-                  borderSkipped: false
-                }]
-              },
-              options: {
-                font: {
-                  family: "'DM Sans', sans-serif"
-                },
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                  legend: {
-                    display: false,
-                    labels: {
-                      font: {
-                        family: "'DM Sans', sans-serif"
-                      }
-                    }
-                  }
-                },
-                scales: {
-                  x: {
-                    beginAtZero: true,
-                    max: 14,
-                    ticks: {
-                      font: {
-                        size: 10, 
-                        family: "'DM Sans', sans-serif"
-                      }
-                    }
-                  },
-                  y: {
-                    ticks: {
-                      font: { 
-                        size: 10, 
-                        family: "'DM Sans', sans-serif" }
-                    }
-                  }
-                }
-              }
-            });
-          }
+          renderChart('spotify-chart-container', {
+            labels: ['edm', 'pop edm', 'electro house', 'pop dance', 'melodic dubstep', 'future bass', 'pop', 'electropop', 'tropical house', 'electronic trap', 'dubstep', 'progressive trance', 'chillstep', 'canadian electronic', 'vapor twitch', 'progressive house', 'post-teen pop', 'dance pop', 'video game music', 'vapor soul', 'uplifting trance', 'trance', 'progressive electro house', 'k-pop', 'gaming edm', 'filthstep', 'electra', 'brostep', 'big room'],
+            datasetLabel: 'Number of top artists in this genre:',
+            datasetValues: [13, 11, 9, 8, 7, 7, 6, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          });
 
-          // Render correlation scatter chart
           const corrContainer = document.getElementById('correlation-chart-container');
           if (corrContainer && window.Chart) {
             corrContainer.innerHTML = '<canvas id="correlationChart"></canvas>';
-            
             const corrCtx = document.getElementById('correlationChart').getContext('2d');
-            
+
             // Data points (artist ranking, popularity)
-            const dataPoints = [
-              { x: 1, y: 78 },
-              { x: 2, y: 71 },
-              { x: 3, y: 63 },
-              { x: 4, y: 79 },
-              { x: 5, y: 86 },
-              { x: 6, y: 84 },
-              { x: 7, y: 66 },
-              { x: 8, y: 85 },
-              { x: 9, y: 77 },
-              { x: 10, y: 59 },
-              { x: 11, y: 64 },
-              { x: 12, y: 55 }
-            ];
-            
+            y = [78, 71, 63, 79, 86, 84, 66, 85, 77, 59, 64, 55];
+            const dataPoints = y.map((popularity, index) => ({ x: index + 1, y: popularity }));
+
             // Calculate trend line (linear regression)
             const n = dataPoints.length;
             let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
@@ -304,12 +480,12 @@
             });
             const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
             const intercept = (sumY - slope * sumX) / n;
-            
+
             const trendLine = [
               { x: 0, y: intercept },
               { x: 13, y: slope * 13 + intercept }
             ];
-            
+
             const correlationChart = new Chart(corrCtx, {
               type: 'scatter',
               data: {
@@ -350,11 +526,9 @@
                     title: {
                       display: true,
                       text: 'Artist Ranking',
-                      font: { size: 12, family: "DM Sans"}
+                      font: getFontConfig("font", 12).font,
                     },
-                    ticks: {
-                      font: { size: 10, family: "'DM Sans', sans-serif" }
-                    },
+                    ticks: getFontConfig("ticks", 10),
                     min: 0,
                     max: 13
                   },
@@ -362,10 +536,10 @@
                     title: {
                       display: true,
                       text: 'Popularity',
-                      font: { size: 12, family: "DM Sans"}
+                      font: getFontConfig("font", 12)
                     },
                     ticks: {
-                      font: { size: 10, family: "'DM Sans', sans-serif" }
+                      font: getFontConfig("font", 10)
                     },
                     min: 55,
                     max: 90
