@@ -495,7 +495,7 @@ html::-webkit-scrollbar-thumb:hover {
   font-weight: 500;
 }
 
-.detail-panel ul {
+.detail-panel ul, ol {
   padding-left: 2.25rem;
   margin: 0.75rem 0 0;
   color: #4b5563;

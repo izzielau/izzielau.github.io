@@ -1,0 +1,75 @@
+[
+  {
+    "id": "castro-market",
+    "name": "Market St",
+    "days": ["Tue", "Thu"],
+    "note": "Commercial corridor sweep",
+    "coords": [
+      [37.7654, -122.4331],
+      [37.7689, -122.4276]
+    ]
+  },
+  {
+    "id": "church-market",
+    "name": "Church St",
+    "days": ["Mon", "Fri"],
+    "coords": [
+      [37.76495, -122.43346],
+      [37.76755, -122.43305]
+    ]
+  },
+  {
+    "id": "dolores-15th",
+    "name": "Dolores St",
+    "days": ["Wed", "Sat"],
+    "coords": [
+      [37.7651, -122.4297],
+      [37.7683, -122.42715]
+    ]
+  },
+  {
+    "id": "sanchez-16th",
+    "name": "Sanchez St",
+    "days": ["Tue", "Sat"],
+    "coords": [
+      [37.7658, -122.4325],
+      [37.7689, -122.4309]
+    ]
+  },
+  {
+    "id": "noe-16th",
+    "name": "Noe St",
+    "days": ["Tue", "Fri"],
+    "coords": [
+      [37.76512, -122.43375],
+      [37.7686, -122.43188]
+    ]
+  },
+  {
+    "id": "henry-st",
+    "name": "Henry St",
+    "days": ["Mon", "Wed"],
+    "coords": [
+      [37.76408, -122.43492],
+      [37.7658, -122.43324]
+    ]
+  },
+  {
+    "id": "15th-st",
+    "name": "15th St",
+    "days": ["Wed", "Sat"],
+    "coords": [
+      [37.7663, -122.43386],
+      [37.7669, -122.42768]
+    ]
+  },
+  {
+    "id": "beaver-st",
+    "name": "Beaver St",
+    "days": ["Tue", "Fri"],
+    "coords": [
+      [37.76582, -122.43328],
+      [37.76522, -122.43138]
+    ]
+  }
+]

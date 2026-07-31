@@ -94,9 +94,15 @@
           <p>Prior to inferencing, the prompt is augmented with personalized contextual evidence retrieved via a <b>BM25‑based lexical retriever</b> operating over a corpus of 300 of my personally‑authored reviews. The retriever returns the top‑<i>k</i> reviews that are semantically-similar to the business being rated. These are then reformatted and concatenated into the prompt to guide the model’s rating towards my own personal preferences.</p>
           <p>I used the <b>Yelp API</b> to download the attributes for each of the businesses I’ve rated in the past. The retrieval model is built on top of the basic business attributes (name, rating, reviews, categories).</p>
           <div id="yelp-schema"></div>
-          <h4>Evaluation</h4>
-          <p>I validated the prediction system against a holdout dataset of 50 of my personal reviews, evaluating its capability to accurately predict and replicate the true rating (which has been obscured). I formatted the validation data into a basic prompt and used <b>GPT‑4o mini</b> to generate the recommendation score for each business.</p>
+          <p>To prompt the system for prediction classification, I drafted a basic prompt and used <b>GPT‑4o mini</b> to generate a rating aligned with the Yelp scoring system, from 1-star to 5-stars, given the information for each business.</p>
           <div id="llm-prompt"></div>
+          <p>I experimented with two architecture options:</p>
+          <ol> 
+            <li><b>LLM + profile: </b>Includes a summary of the distribution and top categories of my preferences.</li>
+            <li><b>LLM + profile + RAG: </b>Starts with [1] and adds the top-<i>k</i> most similar reviews from the vectorized database of 300 reviews.</li>
+          </ol>
+          <h4>Evaluation</h4>
+          <p>I then validated the prediction system against a holdout dataset of 50 of my personal reviews, evaluating its capability to accurately predict and replicate the true rating (which has been obscured).</p>
           <p>Interestingly, the LLM + profile model had the worst pairwise accuracy (<b>0.700</b>). This suggests that without the additional context from the RAG system, the model struggles to accurately capture my personal preference and imposes its internal biases instead.</p>
           <div id="metrics-table-wrap"></div>
           <p>I was also quite entertained by the fact that the baseline performance (crowd-sourcing the average rating from the business itself) had such high one-off accuracy. It seems that though I initially started this project inspired to set apart my ratings from the norm, the norm is actually a pretty good indicator after all.</p>
@@ -176,6 +182,19 @@
           <p>My paper can be read on Academia here at this link: <a href="https://www.academia.edu/84397392/A_Survey_of_the_Current_Applications_of_NLP_to_Music_Recommendation_Algorithms_and_Composition" target="_blank" rel="noopener noreferrer">A Survey of the Current Applications of NLP to Music: Recommendation Algorithms & Composition</a></p>
         `,
         thumb: "images/music.png"
+      },
+      streetparking: {
+        title: 'Street Parking',
+        subtitle: 'Hidden project demo',
+        description: 'A hidden demo of the San Francisco street sweeping schedule explorer.',
+        content: `
+          <p>This page is intentionally hidden from the main project list and is accessible directly through the query parameter.</p>
+          <div style="border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; min-height: 70vh;">
+            <iframe src="streetparking/" title="Street parking app" style="width: 100%; min-height: 70vh; border: 0;"></iframe>
+          </div>
+        `,
+        thumb: "images/logo.png",
+        hidden: true
       }
     };
 
@@ -189,8 +208,8 @@
 
     const renderToc = () => {
       tocList.innerHTML = '';
-      Object.keys(pages).forEach((pageKey) => {
-        const page = pages[pageKey];
+      Object.entries(pages).forEach(([pageKey, page]) => {
+        if (page.hidden) return;
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'toc-item';
@@ -231,21 +250,36 @@
     };
 
     let selectedPage = 'microsoft';
-    let pageKey = 'microsoft'
 
     const renderPage = (pageKey) => {
-      selectedPage = pageKey;
+      const resolvedPageKey = pageKey && pages[pageKey] ? pageKey : 'microsoft';
+      selectedPage = resolvedPageKey;
 
-      const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + pageKey;
+      const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?page=' + resolvedPageKey;
       window.history.pushState({ path: newurl }, '', newurl);
 
       homeLayout.classList.add('selected');
       detailPage.classList.remove('hidden');
-      detailTitle.textContent = pages[pageKey].title;
-      detailContent.innerHTML = pages[pageKey].content;
+      const page = pages[resolvedPageKey];
+
+      // Special-case: open the street parking app as a standalone page so Vite modules load correctly
+      if (resolvedPageKey === 'streetparking') {
+        try {
+          const p = window.location.pathname;
+          const base = p.endsWith('/') ? p : p.replace(/[^/]*$/, '');
+          window.location.href = base + 'streetparking/';
+        } catch (e) {
+          // fallback: navigate to relative folder
+          window.location.href = 'streetparking/';
+        }
+        return;
+      }
+
+      detailTitle.textContent = page.title;
+      detailContent.innerHTML = page.content;
 
       detailImage.style.opacity = '1';
-      detailImage.src = pages[pageKey].thumb;
+      detailImage.src = page.thumb;
       detailImage.classList.remove('hidden');
 
       // Reusable components.
@@ -562,11 +596,13 @@
       const button = event.target.closest('.toc-item');
       if (!button) return;
       const pageKey = button.dataset.page;
-      renderPage(selectedPage === pageKey ? null : pageKey);
+      renderPage(selectedPage === pageKey ? 'microsoft' : pageKey);
     });
 
     renderToc();
-    renderPage('microsoft');
+    const params = new URLSearchParams(window.location.search);
+    const initialPage = params.get('page') && pages[params.get('page')] ? params.get('page') : 'microsoft';
+    renderPage(initialPage);
   </script>
 </body>
 
