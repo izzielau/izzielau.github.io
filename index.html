@@ -195,6 +195,19 @@
         `,
         thumb: "images/logo.png",
         hidden: true
+      },
+      attendance: {
+        title: 'Belt Attendance',
+        subtitle: 'Password protected',
+        description: 'A hidden attendance tracker behind a passcode gate.',
+        content: `
+          <p>This page is intentionally hidden from the main project list and is only available through the direct route.</p>
+          <div style="border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; min-height: 70vh;">
+            <iframe src="attendance/" title="Attendance app" style="width: 100%; min-height: 70vh; border: 0;"></iframe>
+          </div>
+        `,
+        thumb: "images/logo.png",
+        hidden: true
       }
     };
 
@@ -262,15 +275,14 @@
       detailPage.classList.remove('hidden');
       const page = pages[resolvedPageKey];
 
-      // Special-case: open the street parking app as a standalone page so Vite modules load correctly
-      if (resolvedPageKey === 'streetparking') {
+      // Special-case: open hidden standalone apps as direct routes
+      if (resolvedPageKey === 'streetparking' || resolvedPageKey === 'attendance') {
         try {
           const p = window.location.pathname;
           const base = p.endsWith('/') ? p : p.replace(/[^/]*$/, '');
-          window.location.href = base + 'streetparking/';
+          window.location.href = base + resolvedPageKey + '/';
         } catch (e) {
-          // fallback: navigate to relative folder
-          window.location.href = 'streetparking/';
+          window.location.href = resolvedPageKey + '/';
         }
         return;
       }
